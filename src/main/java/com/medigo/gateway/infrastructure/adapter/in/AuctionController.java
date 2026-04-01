@@ -2,6 +2,7 @@ package com.medigo.gateway.infrastructure.adapter.in;
 
 import com.medigo.gateway.application.dto.request.CreateAuctionRequest;
 import com.medigo.gateway.application.dto.request.PlaceBidRequest;
+import com.medigo.gateway.application.dto.request.UpdateAuctionRequest;
 import com.medigo.gateway.application.service.ValidationService;
 import com.medigo.gateway.domain.port.in.ForwardingUseCase;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,12 +27,6 @@ public class AuctionController {
     private final ForwardingUseCase forwardingUseCase;
     private final ValidationService validationService;
 
-    @GetMapping
-    @Operation(summary = "Listar subastas")
-    public ResponseEntity<Object> list(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/auctions", req, null);
-    }
-
     @GetMapping("/active")
     @Operation(summary = "Subastas activas")
     public ResponseEntity<Object> active(HttpServletRequest req) {
@@ -44,12 +39,36 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/" + id, req, null);
     }
 
+    @GetMapping("/{id}/bids")
+    @Operation(summary = "Historial de pujas")
+    public ResponseEntity<Object> getBids(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, null);
+    }
+
     @PostMapping
     @Operation(summary = "Crear subasta (ADMIN)")
     public ResponseEntity<Object> create(
             @Valid @RequestBody CreateAuctionRequest body, HttpServletRequest req) {
         validationService.validateCreateAuction(body);
         return forwardingUseCase.forward("/api/auctions", req, body);
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Editar subasta programada (ADMIN)")
+    public ResponseEntity<Object> update(
+            @PathVariable Long id,
+            @Valid @RequestBody UpdateAuctionRequest body,
+            HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id, req, body);
+    }
+
+    @PostMapping("/{id}/join")
+    @Operation(summary = "Unirse a subasta")
+    public ResponseEntity<Object> join(
+            @PathVariable Long id,
+            @RequestParam Long userId,
+            HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id + "/join?userId=" + userId, req, null);
     }
 
     @PostMapping("/{id}/bids")
@@ -59,11 +78,5 @@ public class AuctionController {
             @Valid @RequestBody PlaceBidRequest body,
             HttpServletRequest req) {
         return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, body);
-    }
-
-    @GetMapping("/{id}/bids")
-    @Operation(summary = "Historial de pujas")
-    public ResponseEntity<Object> getBids(@PathVariable Long id, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, null);
     }
 }

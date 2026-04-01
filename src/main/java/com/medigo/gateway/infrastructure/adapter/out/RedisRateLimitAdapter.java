@@ -21,17 +21,22 @@ public class RedisRateLimitAdapter implements RateLimitPort {
 
     @Override
     public boolean isAllowed(String key, int maxPerMinute) {
-        String redisKey = KEY_PREFIX + key;
-        Long count = redisTemplate.opsForValue().increment(redisKey);
+        try {
+            String redisKey = KEY_PREFIX + key;
+            Long count = redisTemplate.opsForValue().increment(redisKey);
 
-        if (count != null && count == 1) {
-            redisTemplate.expire(redisKey, Duration.ofMinutes(1));
-        }
+            if (count != null && count == 1) {
+                redisTemplate.expire(redisKey, Duration.ofMinutes(1));
+            }
 
-        boolean allowed = count != null && count <= maxPerMinute;
-        if (!allowed) {
-            log.warn("Rate limit excedido para key: {}", key);
+            boolean allowed = count != null && count <= maxPerMinute;
+            if (!allowed) {
+                log.warn("Rate limit excedido para key: {}", key);
+            }
+            return allowed;
+        } catch (Exception ex) {
+            log.warn("Redis no disponible, omitiendo rate limit para key: {}. Causa: {}", key, ex.getMessage());
+            return true;
         }
-        return allowed;
     }
 }

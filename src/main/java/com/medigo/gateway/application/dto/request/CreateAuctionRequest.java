@@ -27,4 +27,11 @@ public class CreateAuctionRequest {
 
     @NotNull
     private LocalDateTime endTime;
+
+    // FIXED_TIME o INACTIVITY
+    private String closureType;
+
+    private BigDecimal maxPrice;
+
+    private Integer inactivityMinutes;
 }
