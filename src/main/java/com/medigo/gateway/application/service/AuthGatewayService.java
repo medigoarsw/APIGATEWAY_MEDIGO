@@ -6,12 +6,15 @@ import com.medigo.gateway.domain.model.UserClaims;
 import com.medigo.gateway.domain.port.in.AuthUseCase;
 import com.medigo.gateway.domain.port.out.BackendClient;
 import com.medigo.gateway.domain.port.out.JwtPort;
+import com.medigo.gateway.infrastructure.exception.GatewayValidationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -34,6 +37,15 @@ public class AuthGatewayService implements AuthUseCase {
                 "/api/auth/login", HttpMethod.POST, Map.of(), request
         );
 
+        if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
+                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+            throw new GatewayValidationException("Credenciales inválidas");
+        }
+        if (backendResponse.getStatusCode().isError()) {
+            log.error("Backend respondió con error {}: {}", backendResponse.getStatusCode(), backendResponse.getBody());
+            throw new IllegalStateException("Error en el backend al autenticar: " + backendResponse.getStatusCode());
+        }
+
         @SuppressWarnings("unchecked")
         Map<String, Object> body = (Map<String, Object>) backendResponse.getBody();
 
@@ -41,21 +53,60 @@ public class AuthGatewayService implements AuthUseCase {
             throw new IllegalStateException("Backend returned empty body on login");
         }
 
+        Map<String, Object> payload = resolvePayload(body);
+        String userId = readAsString(payload, "user_id", "id", "userId");
+        String username = readAsString(payload, "username", "userName");
+        String email = readAsString(payload, "email");
+        String role = readAsString(payload, "role");
+
+        if (userId == null || userId.isBlank()) {
+            throw new IllegalStateException("Backend login response missing user id");
+        }
+        if (username == null || username.isBlank()) {
+            throw new IllegalStateException("Backend login response missing username");
+        }
+
+        long id;
+        try {
+            id = Long.parseLong(userId);
+        } catch (NumberFormatException ex) {
+            throw new IllegalStateException("Backend login response contains invalid user id: " + userId, ex);
+        }
+
         UserClaims claims = UserClaims.builder()
-                .userId(String.valueOf(body.get("id")))
-                .username(String.valueOf(body.get("username")))
-                .email(String.valueOf(body.getOrDefault("email", "")))
-                .role(String.valueOf(body.getOrDefault("role", "USUARIO")))
+                .userId(String.valueOf(id))
+                .username(username)
+                .email(email == null ? "" : email)
+                .role(role == null || role.isBlank() ? "USUARIO" : role)
                 .build();
 
         String jwt = jwtPort.generateToken(claims);
 
         return LoginResponse.builder()
-                .id(Long.parseLong(claims.getUserId()))
+                .id(id)
                 .username(claims.getUsername())
                 .email(claims.getEmail())
                 .role(claims.getRole())
                 .jwtToken(jwt)
                 .build();
+    }
+
+    @SuppressWarnings("unchecked")
+    private Map<String, Object> resolvePayload(Map<String, Object> body) {
+        Object data = body.get("data");
+        if (data instanceof Map<?, ?> dataMap) {
+            return (Map<String, Object>) dataMap;
+        }
+        return new HashMap<>(body);
+    }
+
+    private String readAsString(Map<String, Object> source, String... keys) {
+        for (String key : keys) {
+            Object value = source.get(key);
+            if (value != null) {
+                return String.valueOf(value);
+            }
+        }
+        return null;
     }
 }

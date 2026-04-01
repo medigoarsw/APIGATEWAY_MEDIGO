@@ -33,18 +33,18 @@ public class SecurityConfig {
                 .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                 .requestMatchers("/actuator/health").permitAll()
 
-                // Solo ADMIN
-                .requestMatchers(HttpMethod.POST, "/api/auctions").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/api/auctions/**").hasRole("ADMIN")
-                .requestMatchers("/api/catalog/**").hasRole("ADMIN")
+                // TODO: descomentar las líneas de roles cuando el backend active su propia seguridad.
+                // Los roles que devuelve el backend son: "ADMIN", "USER", "DELIVERY".
+                // Ejemplo de cómo quedaría:
+                //   .requestMatchers(HttpMethod.POST, "/api/auctions").hasRole("ADMIN")
+                //   .requestMatchers(HttpMethod.PUT,  "/api/auctions/**").hasRole("ADMIN")
+                //   .requestMatchers(HttpMethod.DELETE, "/api/auctions/**").hasRole("ADMIN")
+                //   .requestMatchers("/api/catalog/**").hasRole("ADMIN")
+                //   .requestMatchers("/api/auctions/**").hasAnyRole("ADMIN", "USER")
+                //   .requestMatchers("/api/orders/**").hasAnyRole("ADMIN", "USER")
+                //   .requestMatchers("/api/logistics/**").hasAnyRole("ADMIN", "DELIVERY")
 
-                // ADMIN y USUARIO
-                .requestMatchers("/api/auctions/**").hasAnyRole("ADMIN", "USUARIO")
-                .requestMatchers("/api/orders/**").hasAnyRole("ADMIN", "USUARIO")
-
-                // ADMIN y REPARTIDOR
-                .requestMatchers("/api/logistics/**").hasAnyRole("ADMIN", "REPARTIDOR")
-
+                // Por ahora: cualquier usuario autenticado puede acceder
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

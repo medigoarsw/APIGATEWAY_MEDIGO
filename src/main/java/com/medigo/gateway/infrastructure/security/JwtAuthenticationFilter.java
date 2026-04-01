@@ -48,6 +48,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // Procesar JWT
         String token = extractToken(request);
+        if (!StringUtils.hasText(token)) {
+            log.warn("[{}] Request sin token: {} {}", traceId, request.getMethod(), request.getRequestURI());
+        } else if (!jwtPort.isValid(token)) {
+            log.warn("[{}] Token inválido en: {} {}", traceId, request.getMethod(), request.getRequestURI());
+        }
         if (StringUtils.hasText(token) && jwtPort.isValid(token)) {
             UserClaims claims = jwtPort.validateAndExtract(token);
             String role = "ROLE_" + claims.getRole();

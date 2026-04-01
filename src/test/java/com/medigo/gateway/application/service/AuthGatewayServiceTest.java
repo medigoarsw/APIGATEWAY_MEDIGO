@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
@@ -33,14 +34,14 @@ class AuthGatewayServiceTest {
                 "id", 1, "username", "testuser",
                 "email", "test@test.com", "role", "USUARIO");
 
-        when(backendClient.send(eq("/api/auth/login"), eq(HttpMethod.POST), any(), any()))
+        lenient().when(backendClient.send(eq("/api/auth/login"), eq(HttpMethod.POST), any(), any()))
                 .thenReturn(ResponseEntity.ok(backendBody));
 
         UserClaims claims = UserClaims.builder()
                 .userId("1").username("testuser")
                 .email("test@test.com").role("USUARIO").build();
 
-        when(jwtPort.generateToken(any())).thenReturn("mocked.jwt.token");
+                lenient().when(jwtPort.generateToken(any())).thenReturn("mocked.jwt.token");
     }
 
     @Test
@@ -54,5 +55,32 @@ class AuthGatewayServiceTest {
         assertThat(response.getJwtToken()).isEqualTo("mocked.jwt.token");
         assertThat(response.getUsername()).isEqualTo("testuser");
         assertThat(response.getRole()).isEqualTo("USUARIO");
+    }
+
+    @Test
+    void testLoginWithWrappedBackendPayload() {
+        Map<String, Object> wrappedBackendBody = Map.of(
+                "success", true,
+                "data", Map.of(
+                        "id", 2,
+                        "username", "wrappedUser",
+                        "email", "wrapped@test.com",
+                        "role", "ADMIN"
+                )
+        );
+
+        when(backendClient.send(eq("/api/auth/login"), eq(HttpMethod.POST), any(), any()))
+                .thenReturn(ResponseEntity.ok(wrappedBackendBody));
+
+        LoginRequest req = new LoginRequest();
+        req.setUsername("wrappedUser");
+        req.setPassword("password123");
+
+        LoginResponse response = service.login(req);
+
+        assertThat(response.getId()).isEqualTo(2L);
+        assertThat(response.getUsername()).isEqualTo("wrappedUser");
+        assertThat(response.getRole()).isEqualTo("ADMIN");
+        assertThat(response.getJwtToken()).isEqualTo("mocked.jwt.token");
     }
 }
