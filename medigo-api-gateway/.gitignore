@@ -1,6 +1,0 @@
-target/
-.idea/
-*.iml
-*.class
-.env
-application-local.yml
