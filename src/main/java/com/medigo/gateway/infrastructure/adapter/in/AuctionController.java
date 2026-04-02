@@ -45,6 +45,12 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, null);
     }
 
+    @GetMapping("/{id}/winner")
+    @Operation(summary = "Ganador de la subasta")
+    public ResponseEntity<Object> getWinner(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id + "/winner", req, null);
+    }
+
     @PostMapping
     @Operation(summary = "Crear subasta (ADMIN)")
     public ResponseEntity<Object> create(
