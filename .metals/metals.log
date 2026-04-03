@@ -1214,3 +1214,1025 @@ java.nio.file.FileSystemNotFoundException: Provider "vscode-chat-code-block" not
 2026.04.02 20:38:43 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\in\AuthControllerTest.java. Using fallback presentation compiler.
 2026.04.02 20:38:44 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepositoryTest.java. Using fallback presentation compiler.
 2026.04.02 20:38:44 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapterTest.java. Using fallback presentation compiler.
+2026.04.02 20:41:20 INFO  Shutting down server
+2026.04.02 20:41:20 INFO  Memory monitor stopped
+2026.04.02 20:41:20 INFO  shutting down Metals
+2026.04.02 20:41:20 INFO  Exiting server
+2026.04.03 08:38:53 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 08:38:54 INFO  time: initialize in 0.84s
+2026.04.03 08:38:56 INFO  Memory monitor started
+2026.04.03 08:39:02 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 08:39:04 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:09 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:12 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:13 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:13 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:13 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+abr 03, 2026 8:39:14 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11
+2026.04.03 08:39:13 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+abr 03, 2026 8:39:14 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 12
+2026.04.03 08:39:13 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:29 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.03 08:39:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:30 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java]
+2026.04.03 08:39:30 INFO  empty definition using pc, found symbol in pc: _empty_/`<any>`#requestMatchers#permitAll# (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_empty-definition_08-39-30-850.md")
+2026.04.03 08:39:31 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java]
+2026.04.03 08:39:31 INFO  empty definition using pc, found symbol in pc: _empty_/`<any>`#requestMatchers#permitAll#requestMatchers#permitAll#requestMatchers#permitAll#requestMatchers#permitAll#anyRequest#authenticated# (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_empty-definition_08-39-31-929.md")
+2026.04.03 08:39:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\security\JwtAuthenticationFilter.java. Using fallback presentation compiler.
+2026.04.03 08:39:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:40 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 08:39:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:41 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:41 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:41 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:43 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:39:56 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+2026.04.03 08:40:25 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:40:33 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 103
+2026.04.03 08:40:33 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:40:33 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:40:45 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 106
+2026.04.03 08:40:45 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:40:58 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:41:04 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:11 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 108
+abr 03, 2026 8:41:11 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 105
+2026.04.03 08:41:11 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:41:11 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:11 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 110
+abr 03, 2026 8:41:11 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 111
+2026.04.03 08:41:11 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:18 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 112
+2026.04.03 08:41:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:41:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:41:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:41:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:18 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 121
+abr 03, 2026 8:41:18 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 123
+2026.04.03 08:41:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:31 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 124
+2026.04.03 08:41:31 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:41:51 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 128
+2026.04.03 08:41:51 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9787280.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9789fa8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9788000.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c9786ec0.apply(Unknown Source)
+abr 03, 2026 8:42:02 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.OutOfMemoryError: Java heap space
+java.lang.IllegalStateException: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:252)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.hover(MetalsLspService.scala:983)
+	at scala.meta.internal.metals.WorkspaceLspService.hover(WorkspaceLspService.scala:524)
+	at scala.meta.metals.lsp.DelegatingScalaService.hover(DelegatingScalaService.scala:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9787280.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9789fa8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9788000.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c9786ec0.apply(Unknown Source)
+
+2026.04.03 08:42:02 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+abr 03, 2026 8:42:02 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 130
+2026.04.03 08:42:02 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9787280.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9789fa8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9788000.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c9786ec0.apply(Unknown Source)
+abr 03, 2026 8:42:15 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.OutOfMemoryError: Java heap space
+java.lang.IllegalStateException: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:252)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.hover(MetalsLspService.scala:983)
+	at scala.meta.internal.metals.WorkspaceLspService.hover(WorkspaceLspService.scala:524)
+	at scala.meta.metals.lsp.DelegatingScalaService.hover(DelegatingScalaService.scala:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaHoverProvider.hoverOffset(JavaHoverProvider.scala:49)
+	at scala.meta.internal.pc.JavaHoverProvider.hover(JavaHoverProvider.scala:37)
+	at scala.meta.internal.pc.JavaPresentationCompiler.hover(JavaPresentationCompiler.scala:80)
+	at scala.meta.internal.metals.Compilers.$anonfun$hover$1(Compilers.scala:1134)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9787280.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$12(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9789fa8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$10(Compilers.scala:1628)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9788000.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1610)
+	at scala.meta.internal.metals.Compilers.hover(Compilers.scala:1129)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$hover$1(MetalsLspService.scala:985)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c9786ec0.apply(Unknown Source)
+
+abr 03, 2026 8:42:15 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 131
+2026.04.03 08:42:15 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:42:21 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.lambda$doCall$0(JavacTaskImpl.java:101)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c97e59c0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.doCall(JavacTaskImpl.java:100)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.call(JavacTaskImpl.java:94)
+	at scala.meta.internal.metals.DownloadedJavaInteractiveSemanticdb.textDocument(JavaInteractiveSemanticdb.scala:94)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$compile$1(InteractiveSemanticdbs.scala:142)
+	at scala.meta.internal.metals.InteractiveSemanticdbs$$Lambda/0x00000150c97e4700.apply(Unknown Source)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.compile(InteractiveSemanticdbs.scala:141)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:103)
+	at scala.meta.internal.metals.InteractiveSemanticdbs$$Lambda/0x00000150c97e3d80.apply(Unknown Source)
+	at java.base/java.util.HashMap.compute(HashMap.java:1324)
+	at java.base/java.util.Collections$SynchronizedMap.compute(Collections.java:2990)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:93)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$onChange$4(MetalsLspService.scala:942)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c9362000.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.Future$$$Lambda/0x00000150c9108ee8.apply(Unknown Source)
+
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:39)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9835778.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c98159e8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9815628.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c98353b8.apply(Unknown Source)
+abr 03, 2026 8:42:30 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.OutOfMemoryError: Java heap space
+java.lang.IllegalStateException: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:252)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:39)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parseInternal(JavacTaskImpl.java:257)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x00000150c96aacf0.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:248)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:39)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9835778.apply(Unknown Source)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c98159e8.apply(Unknown Source)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.meta.internal.metals.Compilers$$Lambda/0x00000150c9815628.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x00000150c98353b8.apply(Unknown Source)
+
+abr 03, 2026 8:42:30 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 125
+2026.04.03 08:42:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:42:44 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 132
+2026.04.03 08:42:48 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+abr 03, 2026 8:42:53 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.OutOfMemoryError: Java heap space
+java.lang.IllegalStateException: java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.parse(JavacTaskImpl.java:252)
+	at scala.meta.internal.pc.JavaMetalsGlobal$.scanner(JavaMetalsGlobal.scala:339)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:39)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+
+abr 03, 2026 8:42:53 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 127
+abr 03, 2026 8:42:53 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 133
+2026.04.03 08:42:53 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+Exception in thread "pool-1-thread-12" java.lang.OutOfMemoryError: Java heap space
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 134
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 126
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 135
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 137
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 138
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 139
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 129
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 143
+abr 03, 2026 8:44:24 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 144
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 145
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 149
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 148
+2026.04.03 08:44:25 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 155
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 146
+2026.04.03 08:44:24 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:44:25 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:44:25 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:44:25 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+abr 03, 2026 8:44:25 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 161
+2026.04.03 08:44:27 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:44:56 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-45" java.lang.OutOfMemoryError: Java heap space
+2026.04.03 08:48:42 ERROR You might need to remove .metals/metals.mv.db file and restart Metals.
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Memoria Insuficiente - Out of memory. Tamaño: "OutOfMemoryError"
+Out of memory. [90108-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:1841)
+	at org.h2.engine.SessionLocal.beforeCommitOrRollback(SessionLocal.java:781)
+	at org.h2.engine.SessionLocal.commit(SessionLocal.java:687)
+	at org.h2.command.Command.stop(Command.java:163)
+	at org.h2.command.Command.executeQuery(Command.java:237)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:130)
+	at scala.meta.internal.metals.JdbcEnrichments$XtensionConnection.query(JdbcEnrichments.scala:49)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:27)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.Compilers.fromBuildTarget$1(Compilers.scala:1328)
+	at scala.meta.internal.metals.Compilers.loadCompiler(Compilers.scala:1360)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.message.DbException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:64)
+	at org.h2.message.TraceObject.<clinit>(TraceObject.java:108)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:217)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:467)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:225)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:192)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+Caused by: java.sql.SQLException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:62)
+	at org.h2.message.TraceObject.<clinit>(TraceObject.java:108)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:217)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:467)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:225)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:192)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:62)
+	at org.h2.message.TraceObject.<clinit>(TraceObject.java:108)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:217)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:467)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:225)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:192)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2026.04.03 08:48:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:48:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:55:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 08:59:48 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:04:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:08:09 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:55:49 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 09:55:49 INFO  time: initialize in 0.2s
+2026.04.03 09:55:49 INFO  Memory monitor started
+2026.04.03 09:56:00 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 09:56:03 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:56:06 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:56:08 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:56:18 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:56:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 09:56:54 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-2" java.lang.OutOfMemoryError: Java heap space
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments$1(JavaFoldingRangeExtractor.scala:149)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments(JavaFoldingRangeExtractor.scala:160)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.extract(JavaFoldingRangeExtractor.scala:180)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:52)
+	at scala.meta.internal.parsing.FoldingRangeProvider$$Lambda/0x0000018750640a28.apply(Unknown Source)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:48)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1262)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x000001875063e3e8.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.Future$$$Lambda/0x0000018750108ee8.apply(Unknown Source)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026.04.03 09:58:56 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-10" java.lang.OutOfMemoryError: Java heap space
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\UserClaims.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuthController.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuctionController.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\AuditLoggingInterceptor.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuditingService.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuthGatewayService.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuditingServiceTest.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepository.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\dto\request\LoginRequest.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapter.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\LogisticsController.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapterTest.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuthGatewayServiceTest.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\OrderController.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\AuditLog.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepositoryTest.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\WebMvcConfig.java
+2026.04.03 10:26:49 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\CatalogController.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\RestTemplateBackendClient.java
+2026.04.03 10:26:49 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\in\AuthControllerTest.java
+2026.04.03 10:26:49 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuthController.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepository.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuditingService.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/AuditLoggingInterceptor.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/OrderController.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/AuditLog.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java. Output:
+
+2026.04.03 10:26:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/dto/request/LoginRequest.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/in/AuthControllerTest.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/RestTemplateBackendClient.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapterTest.java. Output:
+
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepositoryTest.java. Output:
+
+2026.04.03 10:26:51 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:26:51 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuthGatewayServiceTest.java. Output:
+
+2026.04.03 10:26:52 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuditingServiceTest.java. Output:
+
+2026.04.03 10:26:52 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/UserClaims.java. Output:
+
+2026.04.03 10:26:52 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java. Output:
+
+2026.04.03 10:26:52 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/CatalogController.java. Output:
+
+2026.04.03 10:26:52 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/LogisticsController.java. Output:
+
+2026.04.03 10:29:30 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 10:29:30 INFO  Memory monitor started
+2026.04.03 10:29:41 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 10:29:44 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:29:47 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:29:53 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:30:01 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:30:34 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-5" java.lang.OutOfMemoryError: Java heap space
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments$1(JavaFoldingRangeExtractor.scala:149)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments(JavaFoldingRangeExtractor.scala:160)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.extract(JavaFoldingRangeExtractor.scala:180)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:52)
+	at scala.meta.internal.parsing.FoldingRangeProvider$$Lambda/0x0000017f81644850.apply(Unknown Source)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:48)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1262)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x0000017f81643b60.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.Future$$$Lambda/0x0000017f81108ee8.apply(Unknown Source)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026.04.03 10:32:04 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+2026.04.03 10:33:32 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java. Output:
+An exception has occurred in the compiler (21.0.8). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:86)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.<init>(SharedNameTable.java:92)
+	at jdk.compiler/com.sun.tools.javac.util.SharedNameTable.create(SharedNameTable.java:54)
+	at jdk.compiler/com.sun.tools.javac.util.Names.createTable(Names.java:435)
+	at jdk.compiler/com.sun.tools.javac.util.Names.<init>(Names.java:243)
+	at jdk.compiler/com.sun.tools.javac.util.Names.instance(Names.java:44)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.<init>(JavaCompiler.java:391)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.instance(JavaCompiler.java:127)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.<init>(JavacProcessingEnvironment.java:213)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.instance(JavacProcessingEnvironment.java:198)
+	at jdk.compiler/com.sun.tools.javac.api.BasicJavacTask.initPlugins(BasicJavacTask.java:218)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.prepareCompiler(JavacTaskImpl.java:204)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.lambda$doCall$0(JavacTaskImpl.java:101)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl$$Lambda/0x0000017f81368b50.call(Unknown Source)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.doCall(JavacTaskImpl.java:100)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.call(JavacTaskImpl.java:94)
+	at scala.meta.internal.metals.DownloadedJavaInteractiveSemanticdb.textDocument(JavaInteractiveSemanticdb.scala:94)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$compile$1(InteractiveSemanticdbs.scala:142)
+	at scala.meta.internal.metals.InteractiveSemanticdbs$$Lambda/0x0000017f8154d060.apply(Unknown Source)
+	at scala.util.Try$.apply(Try.scala:217)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.compile(InteractiveSemanticdbs.scala:141)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$3(InteractiveSemanticdbs.scala:103)
+	at scala.meta.internal.metals.InteractiveSemanticdbs$$Lambda/0x0000017f8154c6e0.apply(Unknown Source)
+	at java.base/java.util.HashMap.compute(HashMap.java:1324)
+	at java.base/java.util.Collections$SynchronizedMap.compute(Collections.java:2990)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:93)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:54)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:1730)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:965)
+
+2026.04.03 10:38:02 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuctionController.java. Using fallback presentation compiler.
+Exception in thread "pool-1-thread-3" java.lang.OutOfMemoryError: Java heap space
+2026.04.03 10:38:27 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:38:27 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:38:27 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:38:27 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:38:27 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:38:27 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:38:28 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.03 10:38:28 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuthController.java. Output:
+
+2026.04.03 10:38:28 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuthController.java. Using fallback presentation compiler.
+2026.04.03 10:38:28 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.03 10:38:28 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/CatalogController.java. Output:
+
+2026.04.03 10:38:29 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\CatalogController.java. Using fallback presentation compiler.
+2026.04.03 10:38:28 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/LogisticsController.java. Output:
+
+2026.04.03 10:38:28 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\LogisticsController.java. Using fallback presentation compiler.
+2026.04.03 10:38:30 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/OrderController.java. Output:
+
+2026.04.03 10:38:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\OrderController.java. Using fallback presentation compiler.
+2026.04.03 10:38:30 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/HealthController.java. Output:
+
+2026.04.03 10:38:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\HealthController.java. Using fallback presentation compiler.
+2026.04.03 10:38:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\HealthController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\AuditLog.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepository.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuditingService.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\AuditLoggingInterceptor.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\WebMvcConfig.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\OrderController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\LogisticsController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\CatalogController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuthController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuctionController.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepositoryTest.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuditingServiceTest.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\UserClaims.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuthGatewayService.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuthGatewayServiceTest.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapterTest.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapter.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\in\AuthControllerTest.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\RestTemplateBackendClient.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:38:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\dto\request\LoginRequest.java. Using fallback presentation compiler.
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\WebMvcConfig.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\LogisticsController.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\AuditLog.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepository.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuditingServiceTest.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\interceptor\AuditLoggingInterceptor.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\AuditLogRepositoryTest.java
+2026.04.03 10:38:43 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java. Output:
+
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\OrderController.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuctionController.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\CatalogController.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\in\AuthController.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuditingService.java
+2026.04.03 10:38:43 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepositoryTest.java. Output:
+
+2026.04.03 10:38:43 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/AuditLog.java]
+2026.04.03 10:38:43 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/AuditLoggingInterceptor.java. Output:
+
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\service\AuthGatewayService.java
+2026.04.03 10:38:43 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/AuditLog.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-715.md")
+2026.04.03 10:38:43 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuditingService.java]
+2026.04.03 10:38:44 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepository.java]
+2026.04.03 10:38:44 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/AuditLoggingInterceptor.java]
+2026.04.03 10:38:44 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepositoryTest.java]
+2026.04.03 10:38:44 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuditingServiceTest.java]
+2026.04.03 10:38:44 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuditingServiceTest.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-722.md")
+2026.04.03 10:38:44 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepositoryTest.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-762.md")
+2026.04.03 10:38:44 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuditingServiceTest.java. Output:
+
+2026.04.03 10:38:44 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/AuditLoggingInterceptor.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-741.md")
+2026.04.03 10:38:44 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuthGatewayServiceTest.java
+2026.04.03 10:38:43 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuditingService.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-716.md")
+2026.04.03 10:38:44 INFO  QDox parse error in file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepository.java (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-03\r_qdox-error_10-38-43-997.md")
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\domain\model\UserClaims.java
+2026.04.03 10:38:44 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapterTest.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\JjwtAdapter.java
+2026.04.03 10:38:43 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\in\AuthControllerTest.java
+2026.04.03 10:38:44 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuthController.java. Output:
+
+2026.04.03 10:38:44 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\adapter\out\RestTemplateBackendClient.java
+2026.04.03 10:38:44 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\application\dto\request\LoginRequest.java
+2026.04.03 10:38:44 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:38:45 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/CatalogController.java. Output:
+
+2026.04.03 10:38:45 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/AuditLogRepository.java. Output:
+
+2026.04.03 10:38:45 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/OrderController.java. Output:
+
+2026.04.03 10:38:45 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/AuditLog.java. Output:
+
+2026.04.03 10:38:46 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/LogisticsController.java. Output:
+
+2026.04.03 10:38:46 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.03 10:38:46 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/dto/request/LoginRequest.java. Output:
+
+2026.04.03 10:38:47 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/RestTemplateBackendClient.java. Output:
+
+2026.04.03 10:38:47 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/in/AuthControllerTest.java. Output:
+
+2026.04.03 10:38:48 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java. Output:
+
+2026.04.03 10:38:48 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapterTest.java. Output:
+
+2026.04.03 10:38:48 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/domain/model/UserClaims.java. Output:
+
+2026.04.03 10:38:49 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/test/java/com/medigo/gateway/application/service/AuthGatewayServiceTest.java. Output:
+
+2026.04.03 10:38:49 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java. Output:
+
+2026.04.03 10:38:49 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuditingService.java. Output:
+
+2026.04.03 10:38:50 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java. Output:
+
+2026.04.03 10:40:15 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:40:16 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.03 10:40:15 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 03, 2026 10:40:16 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+abr 03, 2026 10:40:16 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+2026.04.03 10:40:16 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:40:16 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:40:16 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:40:17 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:40:30 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-64" java.lang.OutOfMemoryError: Java heap space
+2026.04.03 10:50:22 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 10:50:22 INFO  Memory monitor started
+2026.04.03 10:50:31 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 10:50:34 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:50:36 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:50:49 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:51:02 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:51:27 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+2026.04.03 10:52:22 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 10:52:22 INFO  time: initialize in 0.11s
+2026.04.03 10:52:22 INFO  Memory monitor started
+2026.04.03 10:52:37 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 10:52:42 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:52:47 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:53:09 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:53:16 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:53:54 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-7" java.lang.OutOfMemoryError: Java heap space
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments$1(JavaFoldingRangeExtractor.scala:154)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments(JavaFoldingRangeExtractor.scala:160)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.extract(JavaFoldingRangeExtractor.scala:180)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:52)
+	at scala.meta.internal.parsing.FoldingRangeProvider$$Lambda/0x000002ee3663a1d0.apply(Unknown Source)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:48)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1262)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x000002ee36635b28.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.Future$$$Lambda/0x000002ee36108ee8.apply(Unknown Source)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026.04.03 10:56:42 INFO  Started: Metals version 1.6.6 in folders 'D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO' for client Visual Studio Code 1.114.0.
+2026.04.03 10:56:42 INFO  Memory monitor started
+2026.04.03 10:56:53 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.03 10:56:57 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:57:00 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:57:16 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:57:35 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.03 10:57:43 WARN  High memory usage detected: 100% (2048 MB / 2048 MB)
+Exception in thread "pool-1-thread-4" java.lang.OutOfMemoryError: Java heap space
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments$1(JavaFoldingRangeExtractor.scala:149)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.findComments(JavaFoldingRangeExtractor.scala:160)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor$.extract(JavaFoldingRangeExtractor.scala:180)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:52)
+	at scala.meta.internal.parsing.FoldingRangeProvider$$Lambda/0x000002350163f048.apply(Unknown Source)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:48)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1262)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda/0x000002350163d6c0.apply(Unknown Source)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:691)
+	at scala.concurrent.Future$$$Lambda/0x0000023501108ee8.apply(Unknown Source)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:500)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

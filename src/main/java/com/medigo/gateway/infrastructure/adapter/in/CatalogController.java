@@ -1,94 +1,113 @@
 package com.medigo.gateway.infrastructure.adapter.in;
 
+import com.medigo.gateway.application.dto.request.CreateMedicationRequest;
+import com.medigo.gateway.application.dto.request.UpdateStockRequest;
 import com.medigo.gateway.domain.port.in.ForwardingUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controller del catálogo de medicamentos: búsqueda, crear, editar stock.
+ * Controller del catálogo de medicamentos.
+ * Rutas públicas: búsqueda, availability, branch info.
+ * Rutas protegidas ADMIN: crear/actualizar medicamentos.
  */
 @RestController
-@RequestMapping("/api/catalog")
+@RequestMapping("/api/medications")
 @RequiredArgsConstructor
 @Tag(name = "Catalog", description = "Catálogo de medicamentos")
 public class CatalogController {
 
     private final ForwardingUseCase forwardingUseCase;
 
-    // ===== BÚSQUEDA PÚBLICA (sin JWT) =====
+    // ========== PÚBLICOS ==========
 
-    @GetMapping("/medications/search")
-    @Operation(summary = "Buscar medicamentos por nombre (Público)")
-    public ResponseEntity<Object> search(
-            @RequestParam String name,
-            HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications/search?name=" + name, req, null);
+    @GetMapping("/search")
+    @Operation(summary = "Buscar medicamentos por nombre (PUBLIC)")
+    public ResponseEntity<Object> search(@RequestParam String name, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications/search?name=" + name, req, null);
     }
 
-    @GetMapping("/medications/branch/{branchId}/stock")
-    @Operation(summary = "Stock en sucursal (Público)")
-    public ResponseEntity<Object> getStockByBranch(
+    @GetMapping("/branch/{branchId}/stock")
+    @Operation(summary = "Stock de medicamentos en sucursal (PUBLIC)")
+    public ResponseEntity<Object> branchStock(@PathVariable Long branchId, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications/branch/" + branchId + "/stock", req, null);
+    }
+
+    @GetMapping("/branch/{branchId}/medications")
+    @Operation(summary = "Medicamentos disponibles en sucursal (PUBLIC)")
+    public ResponseEntity<Object> branchMedications(@PathVariable Long branchId, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications/branch/" + branchId + "/medications", req, null);
+    }
+
+    @GetMapping("/branches")
+    @Operation(summary = "Listar sucursales con medicamentos (PUBLIC)")
+    public ResponseEntity<Object> listBranches(HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications/branches", req, null);
+    }
+
+    @GetMapping("/{medicationId}/availability/branch/{branchId}")
+    @Operation(summary = "Verificar disponibilidad en sucursal (PUBLIC)")
+    public ResponseEntity<Object> availabilityByBranch(
+            @PathVariable Long medicationId,
             @PathVariable Long branchId,
             HttpServletRequest req) {
         return forwardingUseCase.forward(
-                "/api/catalog/medications/branch/" + branchId + "/stock", req, null);
+                "/api/medications/" + medicationId + "/availability/branch/" + branchId,
+                req, null);
     }
 
-    @GetMapping("/medications/branch/{branchId}/medications")
-    @Operation(summary = "Medicamentos de sucursal (Público)")
-    public ResponseEntity<Object> getMedicationsByBranch(
-            @PathVariable Long branchId,
+    @GetMapping("/{medicationId}/availability/branches")
+    @Operation(summary = "Disponibilidad en todas las sucursales (PUBLIC)")
+    public ResponseEntity<Object> availabilityAllBranches(
+            @PathVariable Long medicationId,
             HttpServletRequest req) {
         return forwardingUseCase.forward(
-                "/api/catalog/medications/branch/" + branchId + "/medications", req, null);
+                "/api/medications/" + medicationId + "/availability/branches",
+                req, null);
     }
 
-    @GetMapping("/medications/branches")
-    @Operation(summary = "Listar sucursales (Público)")
-    public ResponseEntity<Object> getBranches(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications/branches", req, null);
+    // ========== PROTEGIDOS ADMIN ==========
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Crear medicamento (ADMIN ONLY)")
+    public ResponseEntity<Object> create(@Valid @RequestBody CreateMedicationRequest body, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications", req, body);
     }
 
-    // ===== PROTEGIDOS (JWT requerido) =====
-
-    @GetMapping("/medications/{id}")
-    @Operation(summary = "Obtener medicamento por ID")
-    public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications/" + id, req, null);
-    }
-
-    @GetMapping("/medications")
-    @Operation(summary = "Listar todos los medicamentos")
-    public ResponseEntity<Object> list(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications", req, null);
-    }
-
-    @PostMapping("/medications")
-    @Operation(summary = "Crear medicamento (ADMIN - HU-07)")
-    public ResponseEntity<Object> create(@RequestBody Object body, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications", req, body);
-    }
-
-    @PutMapping("/medications/{id}")
-    @Operation(summary = "Actualizar medicamento (ADMIN)")
-    public ResponseEntity<Object> update(
-            @PathVariable Long id,
-            @RequestBody Object body,
-            HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications/" + id, req, body);
-    }
-
-    @PutMapping("/medications/{id}/stock")
-    @Operation(summary = "Editar stock por sucursal (ADMIN - HU-08)")
+    @PutMapping("/{medicationId}/branch/{branchId}/stock")
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Actualizar stock en sucursal (ADMIN ONLY)")
     public ResponseEntity<Object> updateStock(
-            @PathVariable Long id,
-            @RequestBody Object body,
+            @PathVariable Long medicationId,
+            @PathVariable Long branchId,
+            @Valid @RequestBody UpdateStockRequest body,
             HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/catalog/medications/" + id + "/stock", req, body);
+        return forwardingUseCase.forward(
+                "/api/medications/" + medicationId + "/branch/" + branchId + "/stock",
+                req, body);
+    }
+
+    // ========== LEGACY (No en especificación, mantener pero deprecar) ==========
+
+    @GetMapping
+    @Operation(summary = "[DEPRECADO] Listar medicamentos - usar /search")
+    public ResponseEntity<Object> list(HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications", req, null);
+    }
+
+    @GetMapping("/{id}")
+    @Operation(summary = "[DEPRECADO] Obtener medicamento - usar /availability")
+    public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/medications/" + id, req, null);
     }
 }

@@ -1,6 +1,8 @@
 package com.medigo.gateway.infrastructure.adapter.in;
 
 import com.medigo.gateway.application.dto.request.CreateOrderRequest;
+import com.medigo.gateway.application.dto.request.AddToCartRequest;
+import com.medigo.gateway.application.dto.request.ConfirmOrderRequest;
 import com.medigo.gateway.domain.port.in.ForwardingUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -9,62 +11,82 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controller de órdenes: manejo de carrito y confirmación de pedidos.
+ * Controller de órdenes y carrito.
+ * Todos los endpoints requieren AFFILIATE.
  */
 @RestController
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
 @Tag(name = "Orders", description = "Gestión de órdenes y carrito")
-@SecurityRequirement(name = "BearerAuth")
 public class OrderController {
 
     private final ForwardingUseCase forwardingUseCase;
 
-    // ===== CARRITO =====
+    // ========== CARRITO (AFFILIATE) ==========
 
     @PostMapping("/cart/add")
-    @Operation(summary = "Agregar medicamento al carrito (HU-04)")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Agregar medicamento al carrito (AFFILIATE ONLY)")
     public ResponseEntity<Object> addToCart(
-            @RequestBody Object body, HttpServletRequest req) {
+            @Valid @RequestBody AddToCartRequest body, HttpServletRequest req) {
         return forwardingUseCase.forward("/api/orders/cart/add", req, body);
     }
 
     @GetMapping("/cart")
-    @Operation(summary = "Obtener carrito actual (HU-04)")
-    public ResponseEntity<Object> getCart(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/orders/cart", req, null);
-    }
-
-    @DeleteMapping("/cart/{cartId}/{medicationId}")
-    @Operation(summary = "Eliminar medicamento del carrito (HU-04)")
-    public ResponseEntity<Object> removeFromCart(
-            @PathVariable Long cartId,
-            @PathVariable Long medicationId,
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Ver carrito (AFFILIATE ONLY)")
+    public ResponseEntity<Object> getCart(
+            @RequestParam Long affiliateId,
+            @RequestParam Long branchId,
             HttpServletRequest req) {
         return forwardingUseCase.forward(
-                "/api/orders/cart/" + cartId + "/" + medicationId, req, null);
+                "/api/orders/cart?affiliateId=" + affiliateId + "&branchId=" + branchId,
+                req, null);
     }
 
-    // ===== ÓRDENES =====
-
-    @PostMapping("/confirm")
-    @Operation(summary = "Confirmar orden (HU-05)")
-    public ResponseEntity<Object> confirmOrder(
-            @RequestBody Object body, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/orders/confirm", req, body);
+    @PostMapping
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Crear orden (AFFILIATE ONLY)")
+    public ResponseEntity<Object> create(
+            @Valid @RequestBody CreateOrderRequest body, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/orders", req, body);
     }
 
-    @GetMapping("/{orderId}")
-    @Operation(summary = "Obtener detalle de orden (HU-05)")
-    public ResponseEntity<Object> getOrder(@PathVariable Long orderId, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/orders/" + orderId, req, null);
+    @PostMapping("/{branchId}/confirm")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Confirmar orden (AFFILIATE ONLY)")
+    public ResponseEntity<Object> confirm(
+            @PathVariable Long branchId,
+            @RequestParam Long affiliateId,
+            @Valid @RequestBody ConfirmOrderRequest body,
+            HttpServletRequest req) {
+        return forwardingUseCase.forward(
+                "/api/orders/" + branchId + "/confirm?affiliateId=" + affiliateId,
+                req, body);
+    }
+
+    // ========== LEGACY (No en especificación, mantener pero deprecar) ==========
+
+    @GetMapping("/{id}")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "[DEPRECADO] Obtener orden por ID")
+    public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/orders/" + id, req, null);
     }
 
     @GetMapping("/affiliate/{affiliateId}")
-    @Operation(summary = "Órdenes del cliente (HU-05)")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "[DEPRECADO] Órdenes por afiliado")
     public ResponseEntity<Object> byAffiliate(
             @PathVariable Long affiliateId, HttpServletRequest req) {
         return forwardingUseCase.forward("/api/orders/affiliate/" + affiliateId, req, null);

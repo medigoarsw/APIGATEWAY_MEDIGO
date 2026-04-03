@@ -7,7 +7,6 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +19,7 @@ import java.util.Map;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor(onConstructor_ = {@Lazy})
+@RequiredArgsConstructor
 public class RestTemplateBackendClient implements BackendClient {
 
     private final RestTemplate restTemplate;

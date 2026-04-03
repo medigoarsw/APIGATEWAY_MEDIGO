@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -26,16 +25,14 @@ public class JjwtAdapter implements JwtPort {
 
     @Override
     public String generateToken(UserClaims claims) {
-        Instant now = Instant.now();
-        Instant expiration = now.plusMillis(properties.getJwt().getExpirationMs());
-        
         return Jwts.builder()
-                .subject(String.valueOf(claims.getUserId()))
+                .subject(claims.getUserId())
                 .claim("username", claims.getUsername())
                 .claim("email", claims.getEmail())
                 .claim("role", claims.getRole())
-                .issuedAt(Date.from(now))
-                .expiration(Date.from(expiration))
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() +
+                        properties.getJwt().getExpirationMs()))
                 .signWith(getKey())
                 .compact();
     }
@@ -49,7 +46,7 @@ public class JjwtAdapter implements JwtPort {
                 .getPayload();
 
         return UserClaims.builder()
-                .userId(Long.parseLong(c.getSubject()))
+                .userId(c.getSubject())
                 .username(c.get("username", String.class))
                 .email(c.get("email", String.class))
                 .role(c.get("role", String.class))

@@ -5,34 +5,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.Optional;
-
 /**
- * Registro de interceptores en el pipeline MVC.
- * Orden: RateLimitInterceptor → AuditLoggingInterceptor
- * Los interceptores son opcionales para soportar tests sin capa de datos.
+ * Registro del interceptor de rate limiting en el pipeline MVC.
  */
 @Configuration
 @RequiredArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    private final Optional<RateLimitInterceptor> rateLimitInterceptor;
-    private final Optional<AuditLoggingInterceptor> auditLoggingInterceptor;
+    private final RateLimitInterceptor rateLimitInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // Rate Limiting: control de frecuencia de peticiones (si está disponible)
-        rateLimitInterceptor.ifPresent(interceptor ->
-            registry.addInterceptor(interceptor)
-                    .addPathPatterns("/api/**")
-                    .excludePathPatterns("/api/auth/login", "/api/auth/register")
-        );
-
-        // Auditoría: registra todas las peticiones en BD (si está disponible)
-        auditLoggingInterceptor.ifPresent(interceptor ->
-            registry.addInterceptor(interceptor)
-                    .addPathPatterns("/api/**")
-                    .order(1) // Se ejecuta después del rate limiting
-        );
+        registry.addInterceptor(rateLimitInterceptor)
+                .addPathPatterns("/api/**")
+                .excludePathPatterns("/api/auth/login", "/api/auth/register");
     }
 }

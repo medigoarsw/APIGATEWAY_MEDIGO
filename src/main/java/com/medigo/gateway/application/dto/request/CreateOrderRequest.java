@@ -1,25 +1,27 @@
 package com.medigo.gateway.application.dto.request;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * DTO de creación de orden.
+ * Per spec: affiliateId, branchId, addressLat (opt), addressLng (opt), notes (opt)
  */
 @Data
 public class CreateOrderRequest {
 
-    @NotNull private Long affiliateId;
-    @NotNull private Long branchId;
+    @NotNull(message = "affiliateId es requerido")
+    @Min(value = 1, message = "affiliateId debe ser mayor a 0")
+    private Long affiliateId;
 
-    @DecimalMin("-90.0") @DecimalMax("90.0")
-    private Double lat;
+    @NotNull(message = "branchId es requerido")
+    @Min(value = 1, message = "branchId debe ser mayor a 0")
+    private Long branchId;
 
-    @DecimalMin("-180.0") @DecimalMax("180.0")
-    private Double lng;
+    private Double addressLat;
 
-    @NotEmpty(message = "items no puede estar vacío")
-    private List<Object> items;
+    private Double addressLng;
+
+    private String notes;
 }
