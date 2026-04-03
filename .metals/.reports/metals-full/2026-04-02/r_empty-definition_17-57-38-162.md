@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java:java/util/Optional#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java
+empty definition using pc, found symbol in pc: java/util/Optional#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 334
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.interceptor;
 
 import lombok.RequiredArgsConstructor;
@@ -5,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.Optional;
+import java.util.@@Optional;
 
 /**
  * Registro de interceptores en el pipeline MVC.
@@ -36,3 +47,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
         );
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/util/Optional#

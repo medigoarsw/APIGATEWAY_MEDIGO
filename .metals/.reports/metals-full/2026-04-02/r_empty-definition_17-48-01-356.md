@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java:_empty_/JwtPort#generateToken#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+empty definition using pc, found symbol in pc: _empty_/JwtPort#generateToken#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 3388
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+text:
+```scala
 package com.medigo.gateway.application.service;
 
 import com.medigo.gateway.application.dto.request.LoginRequest;
@@ -31,14 +42,14 @@ public class AuthGatewayService implements AuthUseCase {
 
     @Override
     public LoginResponse login(LoginRequest request) {
-        log.debug("Forwarding login request for user: {}", request.getEmail());
+        log.debug("Forwarding login request for user: {}", request.getUsername());
 
         ResponseEntity<Object> backendResponse = backendClient.send(
                 "/api/auth/login", HttpMethod.POST, Map.of(), request
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+ backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
             throw new GatewayValidationException("Credenciales inválidas");
         }
         if (backendResponse.getStatusCode().isError()) {
@@ -55,14 +66,15 @@ public class AuthGatewayService implements AuthUseCase {
 
         Map<String, Object> payload = resolvePayload(body);
         String userId = readAsString(payload, "user_id", "id", "userId");
+        String username = readAsString(payload, "username", "userName");
         String email = readAsString(payload, "email");
         String role = readAsString(payload, "role");
 
         if (userId == null || userId.isBlank()) {
             throw new IllegalStateException("Backend login response missing user id");
         }
-        if (email == null || email.isBlank()) {
-            throw new IllegalStateException("Backend login response missing email");
+        if (username == null || username.isBlank()) {
+            throw new IllegalStateException("Backend login response missing username");
         }
 
         long id;
@@ -74,12 +86,12 @@ public class AuthGatewayService implements AuthUseCase {
 
         UserClaims claims = UserClaims.builder()
                 .userId(id)
-                .username(email)
-                .email(email)
+                .username(username)
+                .email(email == null ? "" : email)
                 .role(role == null || role.isBlank() ? "USUARIO" : role)
                 .build();
 
-        String jwt = jwtPort.generateToken(claims);
+        String jwt = jwtPort.@@generateToken(claims);
 
         return LoginResponse.builder()
                 .id(id)
@@ -109,3 +121,10 @@ public class AuthGatewayService implements AuthUseCase {
         return null;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/JwtPort#generateToken#

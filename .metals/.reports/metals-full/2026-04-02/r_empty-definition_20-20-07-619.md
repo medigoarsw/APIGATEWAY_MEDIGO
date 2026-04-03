@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java:java/time/Instant#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java
+empty definition using pc, found symbol in pc: java/time/Instant#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 515
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.adapter.out;
 
 import com.medigo.gateway.domain.model.UserClaims;
@@ -11,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.time.Instant;
+import java.time.@@Instant;
 import java.util.Date;
 
 /**
@@ -72,3 +83,10 @@ public class JjwtAdapter implements JwtPort {
                 properties.getJwt().getSecret().getBytes(StandardCharsets.UTF_8));
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/time/Instant#

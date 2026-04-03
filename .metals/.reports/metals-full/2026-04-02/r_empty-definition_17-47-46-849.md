@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java:_empty_/Jwts#builder#subject#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java
+empty definition using pc, found symbol in pc: _empty_/Jwts#builder#subject#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 835
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/JjwtAdapter.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.adapter.out;
 
 import com.medigo.gateway.domain.model.UserClaims;
@@ -11,7 +22,6 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -26,16 +36,14 @@ public class JjwtAdapter implements JwtPort {
 
     @Override
     public String generateToken(UserClaims claims) {
-        Instant now = Instant.now();
-        Instant expiration = now.plusMillis(properties.getJwt().getExpirationMs());
-        
         return Jwts.builder()
-                .subject(String.valueOf(claims.getUserId()))
+                .@@subject(claims.getUserId())
                 .claim("username", claims.getUsername())
                 .claim("email", claims.getEmail())
                 .claim("role", claims.getRole())
-                .issuedAt(Date.from(now))
-                .expiration(Date.from(expiration))
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() +
+                        properties.getJwt().getExpirationMs()))
                 .signWith(getKey())
                 .compact();
     }
@@ -49,7 +57,7 @@ public class JjwtAdapter implements JwtPort {
                 .getPayload();
 
         return UserClaims.builder()
-                .userId(Long.parseLong(c.getSubject()))
+                .userId(c.getSubject())
                 .username(c.get("username", String.class))
                 .email(c.get("email", String.class))
                 .role(c.get("role", String.class))
@@ -72,3 +80,10 @@ public class JjwtAdapter implements JwtPort {
                 properties.getJwt().getSecret().getBytes(StandardCharsets.UTF_8));
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/Jwts#builder#subject#

@@ -23,7 +23,7 @@ class JjwtAdapterTest {
     @Test
     void testGenerateAndValidateToken() {
         UserClaims claims = UserClaims.builder()
-                .userId("42").username("alice")
+                .userId(42L).username("alice")
                 .email("alice@medigo.com").role("ADMIN").build();
 
         String token = adapter.generateToken(claims);
@@ -34,13 +34,13 @@ class JjwtAdapterTest {
     @Test
     void testExtractClaimsFromToken() {
         UserClaims original = UserClaims.builder()
-                .userId("7").username("bob")
+                .userId(7L).username("bob")
                 .email("bob@medigo.com").role("USUARIO").build();
 
         String token = adapter.generateToken(original);
         UserClaims extracted = adapter.validateAndExtract(token);
 
-        assertThat(extracted.getUserId()).isEqualTo("7");
+        assertThat(extracted.getUserId()).isEqualTo(7L);
         assertThat(extracted.getRole()).isEqualTo("USUARIO");
     }
 

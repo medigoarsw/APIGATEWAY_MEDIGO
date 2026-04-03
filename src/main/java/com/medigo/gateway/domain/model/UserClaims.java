@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Builder
 public class UserClaims {
-    private String userId;
+    private Long userId;
     private String username;
     private String email;
     private String role;

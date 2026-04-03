@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/RestTemplateBackendClient.java:_empty_/Lazy#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/RestTemplateBackendClient.java
+empty definition using pc, found symbol in pc: _empty_/Lazy#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 826
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/out/RestTemplateBackendClient.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.adapter.out;
 
 import com.medigo.gateway.domain.port.out.BackendClient;
@@ -7,7 +18,6 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +30,7 @@ import java.util.Map;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor(onConstructor_ = {@Lazy})
+@RequiredArgsConstructor(onConstructor_ = {@@@Lazy})
 public class RestTemplateBackendClient implements BackendClient {
 
     private final RestTemplate restTemplate;
@@ -56,3 +66,10 @@ public class RestTemplateBackendClient implements BackendClient {
         return h;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/Lazy#

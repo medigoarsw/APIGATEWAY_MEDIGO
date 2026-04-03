@@ -31,29 +31,25 @@ class AuthGatewayServiceTest {
     @BeforeEach
     void setUp() {
         Map<String, Object> backendBody = Map.of(
-                "id", 1, "username", "testuser",
-                "email", "test@test.com", "role", "USUARIO");
+                "id", 1, "email", "test@test.com",
+                "role", "USUARIO");
 
         lenient().when(backendClient.send(eq("/api/auth/login"), eq(HttpMethod.POST), any(), any()))
                 .thenReturn(ResponseEntity.ok(backendBody));
 
-        UserClaims claims = UserClaims.builder()
-                .userId("1").username("testuser")
-                .email("test@test.com").role("USUARIO").build();
-
-                lenient().when(jwtPort.generateToken(any())).thenReturn("mocked.jwt.token");
+        lenient().when(jwtPort.generateToken(any())).thenReturn("mocked.jwt.token");
     }
 
     @Test
     void testLoginReturnsJwtToken() {
         LoginRequest req = new LoginRequest();
-        req.setUsername("testuser");
+        req.setEmail("test@test.com");
         req.setPassword("password123");
 
         LoginResponse response = service.login(req);
 
         assertThat(response.getJwtToken()).isEqualTo("mocked.jwt.token");
-        assertThat(response.getUsername()).isEqualTo("testuser");
+        assertThat(response.getEmail()).isEqualTo("test@test.com");
         assertThat(response.getRole()).isEqualTo("USUARIO");
     }
 
@@ -63,7 +59,6 @@ class AuthGatewayServiceTest {
                 "success", true,
                 "data", Map.of(
                         "id", 2,
-                        "username", "wrappedUser",
                         "email", "wrapped@test.com",
                         "role", "ADMIN"
                 )
@@ -73,13 +68,13 @@ class AuthGatewayServiceTest {
                 .thenReturn(ResponseEntity.ok(wrappedBackendBody));
 
         LoginRequest req = new LoginRequest();
-        req.setUsername("wrappedUser");
+        req.setEmail("wrapped@test.com");
         req.setPassword("password123");
 
         LoginResponse response = service.login(req);
 
         assertThat(response.getId()).isEqualTo(2L);
-        assertThat(response.getUsername()).isEqualTo("wrappedUser");
+        assertThat(response.getEmail()).isEqualTo("wrapped@test.com");
         assertThat(response.getRole()).isEqualTo("ADMIN");
         assertThat(response.getJwtToken()).isEqualTo("mocked.jwt.token");
     }

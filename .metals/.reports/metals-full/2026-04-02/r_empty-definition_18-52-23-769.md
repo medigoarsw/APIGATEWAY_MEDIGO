@@ -1,8 +1,19 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java:com/medigo/gateway/domain/model/UserClaims#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+empty definition using pc, found symbol in pc: com/medigo/gateway/domain/model/UserClaims#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 222
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+text:
+```scala
 package com.medigo.gateway.application.service;
 
 import com.medigo.gateway.application.dto.request.LoginRequest;
 import com.medigo.gateway.application.dto.response.LoginResponse;
-import com.medigo.gateway.domain.model.UserClaims;
+import com.medigo.gateway.domain.model.@@UserClaims;
 import com.medigo.gateway.domain.port.in.AuthUseCase;
 import com.medigo.gateway.domain.port.out.BackendClient;
 import com.medigo.gateway.domain.port.out.JwtPort;
@@ -38,7 +49,7 @@ public class AuthGatewayService implements AuthUseCase {
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+ backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
             throw new GatewayValidationException("Credenciales inválidas");
         }
         if (backendResponse.getStatusCode().isError()) {
@@ -109,3 +120,10 @@ public class AuthGatewayService implements AuthUseCase {
         return null;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: com/medigo/gateway/domain/model/UserClaims#

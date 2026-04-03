@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java:java/util/Optional#ifPresent().
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java
+empty definition using pc, found symbol in pc: java/util/Optional#ifPresent().
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 987
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/interceptor/WebMvcConfig.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.interceptor;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // Rate Limiting: control de frecuencia de peticiones (si está disponible)
-        rateLimitInterceptor.ifPresent(interceptor ->
+        rateLimitInterceptor.@@ifPresent(interceptor ->
             registry.addInterceptor(interceptor)
                     .addPathPatterns("/api/**")
                     .excludePathPatterns("/api/auth/login", "/api/auth/register")
@@ -36,3 +47,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
         );
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/util/Optional#ifPresent().

@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java:_empty_/UserClaims#builder#userId#username#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+empty definition using pc, found symbol in pc: _empty_/UserClaims#builder#userId#username#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 3098
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+text:
+```scala
 package com.medigo.gateway.application.service;
 
 import com.medigo.gateway.application.dto.request.LoginRequest;
@@ -38,7 +49,7 @@ public class AuthGatewayService implements AuthUseCase {
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+ backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
             throw new GatewayValidationException("Credenciales inválidas");
         }
         if (backendResponse.getStatusCode().isError()) {
@@ -74,7 +85,7 @@ public class AuthGatewayService implements AuthUseCase {
 
         UserClaims claims = UserClaims.builder()
                 .userId(id)
-                .username(email)
+                .@@username(email)
                 .email(email)
                 .role(role == null || role.isBlank() ? "USUARIO" : role)
                 .build();
@@ -109,3 +120,10 @@ public class AuthGatewayService implements AuthUseCase {
         return null;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/UserClaims#builder#userId#username#

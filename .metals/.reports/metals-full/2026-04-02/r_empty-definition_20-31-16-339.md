@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java:io/swagger/v3/oas/annotations/security/SecurityRequirement#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java
+empty definition using pc, found symbol in pc: io/swagger/v3/oas/annotations/security/SecurityRequirement#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 493
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/adapter/in/AuctionController.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.adapter.in;
 
 import com.medigo.gateway.application.dto.request.CreateAuctionRequest;
@@ -6,7 +17,7 @@ import com.medigo.gateway.application.dto.request.UpdateAuctionRequest;
 import com.medigo.gateway.application.service.ValidationService;
 import com.medigo.gateway.domain.port.in.ForwardingUseCase;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.@@SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -94,3 +105,10 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, body);
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: io/swagger/v3/oas/annotations/security/SecurityRequirement#
