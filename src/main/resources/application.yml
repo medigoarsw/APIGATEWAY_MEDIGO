@@ -1,0 +1,61 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: medigo-api-gateway
+
+  data:
+    redis:
+      url: ${REDIS_URL:redis://localhost:6379}
+      timeout: 2000ms
+
+gateway:
+  backend:
+    base-url: ${BACKEND_URL:http://localhost:8080}
+    timeout-seconds: 30
+  jwt:
+    secret: ${JWT_SECRET:medigo-super-secret-key-must-be-at-least-256-bits-long}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  rate-limit:
+    global-per-minute: 100
+    user-per-minute: 500
+    bid-per-minute: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      backendCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  retry:
+    instances:
+      backendRetry:
+        maxAttempts: 3
+        waitDuration: 500ms
+        retryExceptions:
+          - org.springframework.web.client.ResourceAccessException
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.medigo.gateway: DEBUG
+    org.springframework.security: INFO
