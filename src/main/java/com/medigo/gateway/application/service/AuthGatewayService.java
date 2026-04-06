@@ -18,6 +18,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -121,6 +123,21 @@ public class AuthGatewayService implements AuthUseCase {
         return null;
     }
 
+    private LocalDateTime readAsLocalDateTime(Map<String, Object> source, String... keys) {
+        String value = readAsString(source, keys);
+        if (value == null || value.isBlank()) {
+            return null;
+        }
+
+        String normalized = value.trim().replace(' ', 'T');
+        try {
+            return LocalDateTime.parse(normalized, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        } catch (Exception ex) {
+            log.warn("No se pudo parsear datetime de backend: {}", value);
+            return null;
+        }
+    }
+
     @Override
     public RegisterResponse register(RegisterRequest request) {
         log.debug("Forwarding register request for user: {}", request.getEmail());
@@ -144,7 +161,10 @@ public class AuthGatewayService implements AuthUseCase {
         String id = readAsString(payload, "id");
         String name = readAsString(payload, "name");
         String email = readAsString(payload, "email");
+        String phone = readAsString(payload, "phone");
         String role = readAsString(payload, "role");
+        LocalDateTime createdAt = readAsLocalDateTime(payload, "createdAt");
+        LocalDateTime updatedAt = readAsLocalDateTime(payload, "updatedAt");
         
         String canonicalRole = RoleMapper.toCanonical(role);
 
@@ -152,7 +172,10 @@ public class AuthGatewayService implements AuthUseCase {
                 .id(id != null ? Long.valueOf(id) : null)
                 .name(name)
                 .email(email)
+                .phone(phone)
                 .role(canonicalRole)
+                .createdAt(createdAt)
+                .updatedAt(updatedAt)
                 .message("Usuario registrado exitosamente")
                 .build();
     }
