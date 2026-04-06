@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java:_empty_/`<any>`#hasRole#anyRequest#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java
+empty definition using pc, found symbol in pc: _empty_/`<any>`#hasRole#anyRequest#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 5217
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.config;
 
 import com.medigo.gateway.infrastructure.security.JwtAuthenticationFilter;
@@ -15,16 +26,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.Arrays;
-
 /**
- * Configuración de Spring Security: stateless JWT + RBAC + CORS.
- * 
- * CORS Configuration:
- * - Permite preflight OPTIONS sin autenticación
- * - Soporta múltiples orígenes de Vercel (*.vercel.app)
- * - Permite desarrollo local (localhost:5173, etc)
- * - Establece headers Security para producción
+ * Configuración de Spring Security: stateless JWT + RBAC.
  */
 @Configuration
 @EnableMethodSecurity
@@ -40,13 +43,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // ======== PREFLIGHT OPTIONS (SIN AUTENTICACION) ========
-                // CRÍTICO: Permite preflight OPTIONS antes de cualquier otra regla
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                
-                // ======== PÚBLICOS (SIN AUTENTICACION) ========
-                .requestMatchers("/", "/index.html").permitAll()
-                .requestMatchers(HttpMethod.GET, "/").permitAll()
+                // ======== PÚBLICOS ========
                 .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/medications/search").permitAll()
@@ -55,12 +52,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/medications/branches").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/medications/*/availability/branch/*").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/medications/*/availability/branches").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/medications").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/medications/*").permitAll()
                 
-                // Swagger, actuator, health
-                .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/swagger-ui.js").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
+                // Swagger, actuator
+                .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .requestMatchers("/actuator/health").permitAll()
 
                 // ======== AUTHENTICATED (requieren JWT) ========
                 .requestMatchers(HttpMethod.GET, "/api/auth/me").authenticated()
@@ -95,72 +90,33 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/{id}").hasRole("DELIVERY")
 
                 // Cualquier otra ruta: requiere autenticación
-                .anyRequest().authenticated()
+                .@@anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
-    /**
-     * Configuración CORS Global
-     * - Soporta múltiples orígenes de Vercel dinámicamente
-     * - Permite desarrollo local
-     * - Expone headers necesarios para JWT
-     */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        
-        // Credenciales: false porque usamos JWT en headers, no cookies
-        config.setAllowCredentials(false);
-        
-        // Orígenes permitidos
-        config.setAllowedOrigins(Arrays.asList(
-            // Desarrollo local
-            "http://localhost:5173",      // Vite default
-            "http://localhost:3000",       // Next.js, CRA default
-            "http://localhost:4200",       // Angular default
-            "http://localhost:8080",       // General dev
-            
-            // Producción - Vercel (soporta preview deployments con *.vercel.app)
-            "https://frontmedigo.vercel.app",  // Dominio principal de Vercel
-            "https://frontmedigo-4r1srb9qh-anderson-fabian-garcia-nietos-projects.vercel.app"  // URL actual
-        ));
-        
-        // NOTA: Si necesitas soportar TODOS los *.vercel.app dinámicamente, considera usar:
-        // config.setAllowedOriginPatterns(Arrays.asList("https://*.vercel.app"));
-        // Pero esto solo funciona con allowCredentials=false (que ya es nuestro caso)
-        
-        // Métodos HTTP permitidos
-        config.setAllowedMethods(Arrays.asList(
-            "GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"
-        ));
-        
-        // Headers permitidos en la request
-        config.setAllowedHeaders(Arrays.asList(
-            "Authorization",
-            "Content-Type",
-            "Accept",
-            "Origin",
-            "X-Requested-With",
-            "X-CSRF-Token",
-            "Access-Control-Request-Method",
-            "Access-Control-Request-Headers"
-        ));
-        
-        // Headers expuestos en la response (para que JS pueda leerlos)
-        config.setExposedHeaders(Arrays.asList(
-            "Authorization",
-            "X-Trace-ID",
-            "X-Content-Type-Options"
-        ));
-        
-        // Tiempo de cache del preflight (1 hora en segundos)
-        config.setMaxAge(3600L);
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOrigin("http://localhost:8080");
+        config.addAllowedOrigin("https://frontmedigo-fy5ywd188-anderson-fabian-garcia-nietos-projects.vercel.app");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return source;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/`<any>`#hasRole#anyRequest#

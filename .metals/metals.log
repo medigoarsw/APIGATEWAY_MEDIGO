@@ -2391,3 +2391,45 @@ WARNING: Unmatched cancel notification for request id 1
 abr 05, 2026 11:25:29 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 25
 2026.04.05 23:25:30 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:26 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:28 INFO  Created report: Optional[file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java]
+2026.04.05 23:35:28 INFO  empty definition using pc, found symbol in pc: _empty_/`<any>`#hasRole#anyRequest# (full report at: "D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\.metals\.reports\metals-full\2026-04-05\r_empty-definition_23-35-28-720.md")
+2026.04.05 23:35:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 05, 2026 11:35:32 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 63
+abr 05, 2026 11:35:32 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 64
+2026.04.05 23:35:33 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+abr 05, 2026 11:35:33 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 66
+2026.04.05 23:35:33 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:33 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.05 23:35:34 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.05 23:35:36 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\application\service\AuthGatewayServiceTest.java. Using fallback presentation compiler.
+2026.04.05 23:35:36 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\test\java\com\medigo\gateway\infrastructure\adapter\in\AuthControllerTest.java. Using fallback presentation compiler.
+2026.04.05 23:37:40 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.05 23:37:40 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:00:48 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:12:54 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:00 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 06, 2026 12:13:32 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 87
+2026.04.06 00:13:32 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:33 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:33 WARN  no build target for: D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java
+2026.04.06 00:13:33 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:13:34 WARN  Running javac-semanticdb failed for file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java. Output:
+
+2026.04.06 00:13:56 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:14:03 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:14:03 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:14:03 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+abr 06, 2026 12:14:20 A. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.04.06 00:14:20 INFO  no build target found for D:\ander\Documents\SEMESTRE 7\ARSW\PROYECTO OFICIAL\APIGATEWAY_MEDIGO\src\main\java\com\medigo\gateway\infrastructure\config\SecurityConfig.java. Using fallback presentation compiler.
+2026.04.06 00:14:33 WARN  High memory usage detected: 99% (2034 MB / 2048 MB)
