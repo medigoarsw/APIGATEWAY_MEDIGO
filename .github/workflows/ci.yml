@@ -5,14 +5,10 @@ on:
     branches:
       - main
       - develop
-      - 'feat/**'
-      - 'feature/**'
   pull_request:
     branches:
       - main
       - develop
-      - 'feat/**'
-      - 'feature/**'
 
 jobs:
   # ──────────────────────────────────────────────
