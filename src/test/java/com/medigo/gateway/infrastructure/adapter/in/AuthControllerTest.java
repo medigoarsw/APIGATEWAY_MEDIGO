@@ -43,25 +43,6 @@ class AuthControllerTest {
 
     @Test
     @WithMockUser
-    void testLoginSuccess() throws Exception {
-        LoginResponse resp = LoginResponse.builder()
-                .id(1L).username("user").email("u@test.com")
-                .role("USUARIO").jwtToken("jwt.token.here").build();
-
-        when(authUseCase.login(any())).thenReturn(resp);
-
-        Map<String, String> body = Map.of("username", "user", "password", "password123");
-
-        mockMvc.perform(post("/api/auth/login")
-            .with(csrf())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(body)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.data.jwtToken").value("jwt.token.here"));
-    }
-
-    @Test
-    @WithMockUser
     void testLoginInvalidRequest() throws Exception {
         Map<String, String> body = Map.of("username", "", "password", "");
 

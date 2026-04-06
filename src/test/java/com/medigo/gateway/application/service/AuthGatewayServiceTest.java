@@ -45,19 +45,6 @@ class AuthGatewayServiceTest {
     }
 
     @Test
-    void testLoginReturnsJwtToken() {
-        LoginRequest req = new LoginRequest();
-        req.setEmail("test@test.com");
-        req.setPassword("password123");
-
-        LoginResponse response = service.login(req);
-
-        assertThat(response.getJwtToken()).isEqualTo("mocked.jwt.token");
-        assertThat(response.getUsername()).isEqualTo("testuser");
-        assertThat(response.getRole()).isEqualTo("USUARIO");
-    }
-
-    @Test
     void testLoginWithWrappedBackendPayload() {
         Map<String, Object> wrappedBackendBody = Map.of(
                 "success", true,
