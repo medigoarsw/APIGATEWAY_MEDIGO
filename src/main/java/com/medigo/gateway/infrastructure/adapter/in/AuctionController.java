@@ -12,41 +12,29 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controller de subastas: enruta hacia el backend.
+ * Controller de subastas.
+ * ADMIN: crear, editar subastas.
+ * ADMIN + AFFILIATE: ver subastas, pujar, unirse.
  */
 @RestController
 @RequestMapping("/api/auctions")
 @RequiredArgsConstructor
 @Tag(name = "Auctions", description = "Gestión de subastas")
-@SecurityRequirement(name = "BearerAuth")
 public class AuctionController {
 
     private final ForwardingUseCase forwardingUseCase;
     private final ValidationService validationService;
 
-    @GetMapping("/active")
-    @Operation(summary = "Subastas activas")
-    public ResponseEntity<Object> active(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/auctions/active", req, null);
-    }
-
-    @GetMapping("/{id}")
-    @Operation(summary = "Obtener subasta por ID")
-    public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/auctions/" + id, req, null);
-    }
-
-    @GetMapping("/{id}/bids")
-    @Operation(summary = "Historial de pujas")
-    public ResponseEntity<Object> getBids(@PathVariable Long id, HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, null);
-    }
+    // ========== ADMIN ONLY ==========
 
     @PostMapping
-    @Operation(summary = "Crear subasta (ADMIN)")
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Crear subasta (ADMIN ONLY)")
     public ResponseEntity<Object> create(
             @Valid @RequestBody CreateAuctionRequest body, HttpServletRequest req) {
         validationService.validateCreateAuction(body);
@@ -54,7 +42,9 @@ public class AuctionController {
     }
 
     @PutMapping("/{id}")
-    @Operation(summary = "Editar subasta programada (ADMIN)")
+    @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Editar subasta (ADMIN ONLY)")
     public ResponseEntity<Object> update(
             @PathVariable Long id,
             @Valid @RequestBody UpdateAuctionRequest body,
@@ -62,8 +52,44 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/" + id, req, body);
     }
 
+    // ========== ADMIN + AFFILIATE ==========
+
+    @GetMapping("/active")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Subastas activas (ADMIN + AFFILIATE)")
+    public ResponseEntity<Object> active(HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/active", req, null);
+    }
+
+    @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Obtener subasta por ID (ADMIN + AFFILIATE)")
+    public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id, req, null);
+    }
+
+    @GetMapping("/{id}/bids")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Historial de pujas (ADMIN + AFFILIATE)")
+    public ResponseEntity<Object> getBids(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id + "/bids", req, null);
+    }
+
+    @GetMapping("/{id}/winner")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Ganador de subasta (ADMIN + AFFILIATE)")
+    public ResponseEntity<Object> getWinner(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/" + id + "/winner", req, null);
+    }
+
     @PostMapping("/{id}/join")
-    @Operation(summary = "Unirse a subasta")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Unirse a subasta (ADMIN + AFFILIATE)")
     public ResponseEntity<Object> join(
             @PathVariable Long id,
             @RequestParam Long userId,
@@ -72,7 +98,9 @@ public class AuctionController {
     }
 
     @PostMapping("/{id}/bids")
-    @Operation(summary = "Colocar puja")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Colocar puja (ADMIN + AFFILIATE)")
     public ResponseEntity<Object> placeBid(
             @PathVariable Long id,
             @Valid @RequestBody PlaceBidRequest body,

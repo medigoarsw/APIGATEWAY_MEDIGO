@@ -6,3 +6,4 @@ target/
 application-local.yml
 medigo-api-gateway/src/main/resources/application.yml
 medigo-api-gateway/src/main/resources/application.properties
+application.properties

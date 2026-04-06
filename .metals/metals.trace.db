@@ -1,0 +1,116 @@
+2026-04-03 08:48:42.748904-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Memoria Insuficiente - Out of memory. Tamaño: "OutOfMemoryError"
+Out of memory. [90108-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:1841)
+	at org.h2.engine.SessionLocal.beforeCommitOrRollback(SessionLocal.java:781)
+	at org.h2.engine.SessionLocal.commit(SessionLocal.java:687)
+	at org.h2.command.Command.stop(Command.java:163)
+	at org.h2.command.Command.executeQuery(Command.java:237)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:130)
+	at scala.meta.internal.metals.JdbcEnrichments$XtensionConnection.query(JdbcEnrichments.scala:49)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:27)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.Compilers.fromBuildTarget$1(Compilers.scala:1328)
+	at scala.meta.internal.metals.Compilers.loadCompiler(Compilers.scala:1360)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.message.DbException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:64)
+	at org.h2.message.TraceObject.<clinit>(TraceObject.java:108)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at scala.meta.internal.metals.H2ConnectionProvider.upgradeIfNeeded(H2ConnectionProvider.scala:132)
+	at scala.meta.internal.metals.H2ConnectionProvider.persistentConnection(H2ConnectionProvider.scala:108)
+	at scala.meta.internal.metals.H2ConnectionProvider.tryAutoServer(H2ConnectionProvider.scala:62)
+	at scala.meta.internal.metals.H2ConnectionProvider.connect(H2ConnectionProvider.scala:44)
+	at scala.meta.internal.metals.H2ConnectionProvider.connection(H2ConnectionProvider.scala:34)
+	at scala.meta.internal.metals.Tables.$anonfun$dependencySources$1(Tables.scala:23)
+	at scala.meta.internal.metals.DependencySources.getBuildTarget(DependencySources.scala:25)
+	at scala.meta.internal.metals.BuildTargets.$anonfun$inverseSources$2(BuildTargets.scala:288)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BuildTargets.inverseSources(BuildTargets.scala:288)
+	at scala.meta.internal.metals.ModuleStatus.refresh(ModuleStatus.scala:45)
+	at scala.meta.internal.metals.WorkspaceLspService.setFocusedDocument(WorkspaceLspService.scala:217)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:467)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:225)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:192)
+	... 8 more
+Caused by: java.sql.SQLException: OutOfMemoryError
+	at org.h2.message.DbException.<clinit>(DbException.java:62)
+	... 32 more
+Caused by: java.lang.OutOfMemoryError
+	... 33 more
+2026-04-03 10:55:16.968463-05:00 database: flush
+org.h2.message.DbException: Memoria Insuficiente - Out of memory. Tamaño: {0}
+Out of memory. [90108-240]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:401)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1675)
+	at org.h2.mvstore.FileStore.writeInBackground(FileStore.java:1848)
+	at org.h2.mvstore.FileStore$BackgroundWriterThread.run(FileStore.java:2257)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Memoria Insuficiente - Out of memory. Tamaño: {0}
+Out of memory. [90108-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 6 more
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.iterator(ConcurrentHashMap.java:4743)
+	at org.h2.mvstore.MVStore.hasUnsavedChanges(MVStore.java:1030)
+	at org.h2.mvstore.MVStore.store(MVStore.java:918)
+	at org.h2.mvstore.MVStore.tryCommit(MVStore.java:866)
+	at org.h2.mvstore.MVStore.tryCommit(MVStore.java:859)
+	at org.h2.mvstore.FileStore.writeInBackground(FileStore.java:1840)
+	... 1 more
+2026-04-03 10:59:48.839141-05:00 database: flush
+org.h2.message.DbException: Memoria Insuficiente - Out of memory. Tamaño: {0}
+Out of memory. [90108-240]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:401)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1675)
+	at org.h2.mvstore.FileStore.writeInBackground(FileStore.java:1848)
+	at org.h2.mvstore.FileStore$BackgroundWriterThread.run(FileStore.java:2257)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Memoria Insuficiente - Out of memory. Tamaño: {0}
+Out of memory. [90108-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 6 more
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.iterator(ConcurrentHashMap.java:4743)
+	at org.h2.mvstore.MVStore.hasUnsavedChanges(MVStore.java:1030)
+	at org.h2.mvstore.MVStore.store(MVStore.java:918)
+	at org.h2.mvstore.MVStore.tryCommit(MVStore.java:866)
+	at org.h2.mvstore.MVStore.tryCommit(MVStore.java:859)
+	at org.h2.mvstore.FileStore.writeInBackground(FileStore.java:1840)
+	... 1 more

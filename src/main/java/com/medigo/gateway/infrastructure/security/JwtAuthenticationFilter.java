@@ -53,18 +53,38 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         } else if (!jwtPort.isValid(token)) {
             log.warn("[{}] Token inválido en: {} {}", traceId, request.getMethod(), request.getRequestURI());
         }
+        
         if (StringUtils.hasText(token) && jwtPort.isValid(token)) {
-            UserClaims claims = jwtPort.validateAndExtract(token);
-            String role = "ROLE_" + claims.getRole();
+            try {
+                UserClaims claims = jwtPort.validateAndExtract(token);
+                
+                // Validar que claims no sea null
+                if (claims == null) {
+                    log.error("[{}] Claims extraidas son null del token", traceId);
+                    chain.doFilter(request, response);
+                    return;
+                }
+                
+                String rawRole = claims.getRole();
+                if (rawRole == null || rawRole.isBlank()) {
+                    log.warn("[{}] Token contiene role vacio, asignando AFFILIATE por defecto", traceId);
+                    rawRole = "AFFILIATE";
+                }
+                
+                String grantedAuthority = "ROLE_" + rawRole;
 
-            UsernamePasswordAuthenticationToken auth =
-                    new UsernamePasswordAuthenticationToken(
-                            claims, null,
-                            List.of(new SimpleGrantedAuthority(role)));
+                UsernamePasswordAuthenticationToken auth =
+                        new UsernamePasswordAuthenticationToken(
+                                claims, null,
+                                List.of(new SimpleGrantedAuthority(grantedAuthority)));
 
-            SecurityContextHolder.getContext().setAuthentication(auth);
-            log.debug("[{}] Usuario autenticado: {} rol: {}",
-                    traceId, claims.getUsername(), claims.getRole());
+                SecurityContextHolder.getContext().setAuthentication(auth);
+                log.debug("[{}] Usuario autenticado: username={} role={} authority={}", 
+                         traceId, claims.getUsername(), rawRole, grantedAuthority);
+            } catch (Exception e) {
+                log.error("[{}] Error validando JWT: {}", traceId, e.getMessage(), e);
+                // No configurar autenticación, continuar como anonimo
+            }
         }
 
         try {
