@@ -62,6 +62,17 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/active", req, null);
     }
 
+    @GetMapping("/won")
+    @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Subastas ganadas del usuario autenticado (ADMIN + AFFILIATE)")
+    public ResponseEntity<Object> won(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/auctions/won?page=" + page + "&size=" + size, req, null);
+    }
+
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
     @SecurityRequirement(name = "BearerAuth")
