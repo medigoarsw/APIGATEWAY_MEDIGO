@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  * Controller del catálogo de medicamentos.
@@ -97,16 +98,48 @@ public class CatalogController {
                 req, body);
     }
 
-    // ========== LEGACY (No en especificación, mantener pero deprecar) ==========
+    // ========== INVENTARIO ADMIN (MVP) ==========
 
     @GetMapping
-    @Operation(summary = "[DEPRECADO] Listar medicamentos - usar /search")
-    public ResponseEntity<Object> list(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/medications", req, null);
+    @Operation(summary = "Listar inventario con paginación y filtros")
+    public ResponseEntity<Object> list(
+            @RequestParam(required = false) Long branchId,
+            @RequestParam(required = false) String q,
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "20") int limit,
+            HttpServletRequest req) {
+
+        UriComponentsBuilder builder = UriComponentsBuilder
+                .fromPath("/api/medications")
+                .queryParam("page", page)
+                .queryParam("limit", limit);
+
+        if (branchId != null) {
+            builder.queryParam("branchId", branchId);
+        }
+        if (q != null && !q.isBlank()) {
+            builder.queryParam("q", q);
+        }
+
+        return forwardingUseCase.forward(builder.toUriString(), req, null);
+    }
+
+    @GetMapping("/stats")
+    @Operation(summary = "Obtener métricas de inventario")
+    public ResponseEntity<Object> stats(
+            @RequestParam(required = false) Long branchId,
+            HttpServletRequest req) {
+
+        UriComponentsBuilder builder = UriComponentsBuilder.fromPath("/api/medications/stats");
+        if (branchId != null) {
+            builder.queryParam("branchId", branchId);
+        }
+
+        return forwardingUseCase.forward(builder.toUriString(), req, null);
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "[DEPRECADO] Obtener medicamento - usar /availability")
+    @Operation(summary = "Obtener medicamento por ID")
     public ResponseEntity<Object> getById(@PathVariable Long id, HttpServletRequest req) {
         return forwardingUseCase.forward("/api/medications/" + id, req, null);
     }
