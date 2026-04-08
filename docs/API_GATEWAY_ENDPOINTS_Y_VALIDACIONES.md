@@ -78,6 +78,14 @@ Estas reglas son las recomendadas de negocio para que Gateway haga control fino 
   - POST /api/auctions/{id}/join -> ADMIN, AFFILIATE
   - POST /api/auctions/{id}/bids -> ADMIN, AFFILIATE
 
+- Sedes (ruta canónica):
+  - GET /api/sedes -> ADMIN
+  - GET /api/sedes/{id} -> ADMIN
+  - POST /api/sedes -> ADMIN
+  - PUT /api/sedes/{id} -> ADMIN
+  - DELETE /api/sedes/{id} -> ADMIN
+  - /sedes y /sedes/** -> DENY (alias legacy deshabilitado)
+
 ## 5) Formato de error estandar (global)
 Muchos endpoints pueden responder errores con este contrato:
 
@@ -787,7 +795,110 @@ Errores tipicos: 400, 404, 409
 
 ---
 
-## 13) Prompt recomendado para el otro proyecto (API Gateway)
+## 13) Endpoints - Sedes Admin (/api/sedes)
+
+Ruta canónica única en Gateway:
+- `/api/sedes`
+
+Alias legacy deshabilitado/no expuesto:
+- `/sedes`
+
+Autorización:
+- Todos los endpoints de esta sección son `ADMIN ONLY`.
+- Requieren `Authorization: Bearer <jwt>`.
+
+Trazabilidad:
+- Header opcional: `X-Trace-Id`.
+- Si no se envía, el Gateway/backend genera traceId automáticamente.
+
+### GET /api/sedes - (ADMIN ONLY)
+
+Query params:
+- `page` (opcional, default `1`, mínimo `1`)
+- `limit` (opcional, default `20`, rango `1..100`)
+- `q` (opcional, filtro por nombre/dirección/especialidad)
+
+200 Response:
+- Envelope estándar `GatewayResponse` con `data` paginado.
+
+Errores: 400, 401, 403, 500
+
+### GET /api/sedes/{id} - (ADMIN ONLY)
+
+Path params:
+- `id` (long, requerido)
+
+Respuestas: 200, 404
+
+### POST /api/sedes - (ADMIN ONLY)
+
+Body:
+```json
+{
+  "nombre": "Sede Norte",
+  "direccion": "Calle 100 #10-20",
+  "especialidad": "Cardiología",
+  "telefono": "+57-601-1234567",
+  "capacidad": 80
+}
+```
+
+Validaciones mínimas en Gateway:
+- `nombre` requerido
+- `direccion` requerido
+- `especialidad` requerido
+- `telefono` opcional
+- `capacidad` opcional (>= 0)
+
+Respuestas: 201, 400, 409
+
+### PUT /api/sedes/{id} - (ADMIN ONLY)
+
+Semántica:
+- actualización parcial, aunque el método sea PUT.
+
+Body (campos opcionales):
+```json
+{
+  "nombre": "Sede Norte Renovada",
+  "direccion": "Calle 100 #10-99",
+  "especialidad": "Medicina Interna",
+  "telefono": "+57-601-1234567",
+  "capacidad": 100
+}
+```
+
+Respuestas: 200, 400, 404, 409
+
+### DELETE /api/sedes/{id} - (ADMIN ONLY)
+
+Borrado:
+- lógico (soft delete)
+
+Respuestas: 200, 404
+
+### Contrato de respuesta estándar (éxito/error)
+
+```json
+{
+  "success": true,
+  "message": "Operación exitosa",
+  "data": {},
+  "traceId": "uuid",
+  "apiVersion": "v1",
+  "timestamp": "2026-04-06T17:00:00Z"
+}
+```
+
+Mapeo de errores esperado:
+- 400: parámetros o payload inválido
+- 404: sede no encontrada
+- 409: conflicto (ej. nombre duplicado activo)
+- 500: error interno
+
+---
+
+## 14) Prompt recomendado para el otro proyecto (API Gateway)
 
 Usa este bloque tal cual como prompt inicial en el repo del API Gateway:
 
