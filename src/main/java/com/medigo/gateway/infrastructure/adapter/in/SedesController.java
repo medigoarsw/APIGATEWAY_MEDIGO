@@ -11,6 +11,8 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -139,6 +141,14 @@ public class SedesController {
         private String telefono;
         @PositiveOrZero(message = "capacidad debe ser mayor o igual a 0")
         private Integer capacidad;
+
+        @DecimalMin(value = "-90.0", message = "latitude fuera de rango")
+        @DecimalMax(value = "90.0", message = "latitude fuera de rango")
+        private Double latitude;
+
+        @DecimalMin(value = "-180.0", message = "longitude fuera de rango")
+        @DecimalMax(value = "180.0", message = "longitude fuera de rango")
+        private Double longitude;
     }
 
     @Data
@@ -150,6 +160,14 @@ public class SedesController {
         private String telefono;
         @PositiveOrZero(message = "capacidad debe ser mayor o igual a 0")
         private Integer capacidad;
+
+        @DecimalMin(value = "-90.0", message = "latitude fuera de rango")
+        @DecimalMax(value = "90.0", message = "latitude fuera de rango")
+        private Double latitude;
+
+        @DecimalMin(value = "-180.0", message = "longitude fuera de rango")
+        @DecimalMax(value = "180.0", message = "longitude fuera de rango")
+        private Double longitude;
     }
 
     @Data
