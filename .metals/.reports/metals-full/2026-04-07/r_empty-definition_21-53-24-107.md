@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java:_empty_/UserClaims#builder#userId#username#email#role#build#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+empty definition using pc, found symbol in pc: _empty_/UserClaims#builder#userId#username#email#role#build#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 4022
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+text:
+```scala
 package com.medigo.gateway.application.service;
 
 import com.medigo.gateway.application.dto.request.LoginRequest;
@@ -44,7 +55,7 @@ public class AuthGatewayService implements AuthUseCase {
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+ backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
             throw new GatewayValidationException("Credenciales inválidas");
         }
         if (backendResponse.getStatusCode().isError()) {
@@ -91,7 +102,7 @@ public class AuthGatewayService implements AuthUseCase {
                 .username(username)
                 .email(email == null ? "" : email)
                 .role(canonicalRole)
-                .build();
+                .@@build();
 
         String jwt = jwtPort.generateToken(claims);
 
@@ -242,8 +253,8 @@ public class AuthGatewayService implements AuthUseCase {
         }
 
         if (backendStatus == HttpStatus.SERVICE_UNAVAILABLE
-                || backendStatus == HttpStatus.BAD_GATEWAY
-                || backendStatus == HttpStatus.GATEWAY_TIMEOUT) {
+ backendStatus == HttpStatus.BAD_GATEWAY
+ backendStatus == HttpStatus.GATEWAY_TIMEOUT) {
             return backendStatus;
         }
 
@@ -253,9 +264,9 @@ public class AuthGatewayService implements AuthUseCase {
     private boolean looksLikeConflict(String message) {
         String normalized = String.valueOf(message).toLowerCase();
         return normalized.contains("ya se encuentra registrado")
-                || normalized.contains("already exists")
-                || normalized.contains("duplic")
-                || normalized.contains("ya existe");
+ normalized.contains("already exists")
+ normalized.contains("duplic")
+ normalized.contains("ya existe");
     }
 
     @Override
@@ -340,3 +351,10 @@ public class AuthGatewayService implements AuthUseCase {
                 .build();
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/UserClaims#builder#userId#username#email#role#build#

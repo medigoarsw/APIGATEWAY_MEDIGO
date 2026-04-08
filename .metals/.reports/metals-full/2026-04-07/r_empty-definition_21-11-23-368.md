@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java:_empty_/HttpMethod#OPTIONS#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java
+empty definition using pc, found symbol in pc: _empty_/HttpMethod#OPTIONS#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 2108
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/infrastructure/config/SecurityConfig.java
+text:
+```scala
 package com.medigo.gateway.infrastructure.config;
 
 import com.medigo.gateway.infrastructure.security.JwtAuthenticationFilter;
@@ -42,7 +53,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 // ======== PREFLIGHT OPTIONS (SIN AUTENTICACION) ========
                 // CRÍTICO: Permite preflight OPTIONS antes de cualquier otra regla
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .requestMatchers(HttpMethod.@@OPTIONS, "/**").permitAll()
                 
                 // ======== PÚBLICOS (SIN AUTENTICACION) ========
                 .requestMatchers("/", "/index.html").permitAll()
@@ -174,3 +185,10 @@ public class SecurityConfig {
         return source;
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/HttpMethod#OPTIONS#

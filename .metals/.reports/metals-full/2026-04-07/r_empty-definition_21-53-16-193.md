@@ -1,3 +1,14 @@
+error id: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java:_empty_/HttpMethod#GET#
+file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+empty definition using pc, found symbol in pc: _empty_/HttpMethod#GET#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 10949
+uri: file:///D:/ander/Documents/SEMESTRE%207/ARSW/PROYECTO%20OFICIAL/APIGATEWAY_MEDIGO/src/main/java/com/medigo/gateway/application/service/AuthGatewayService.java
+text:
+```scala
 package com.medigo.gateway.application.service;
 
 import com.medigo.gateway.application.dto.request.LoginRequest;
@@ -44,7 +55,7 @@ public class AuthGatewayService implements AuthUseCase {
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
+ backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
             throw new GatewayValidationException("Credenciales inválidas");
         }
         if (backendResponse.getStatusCode().isError()) {
@@ -242,8 +253,8 @@ public class AuthGatewayService implements AuthUseCase {
         }
 
         if (backendStatus == HttpStatus.SERVICE_UNAVAILABLE
-                || backendStatus == HttpStatus.BAD_GATEWAY
-                || backendStatus == HttpStatus.GATEWAY_TIMEOUT) {
+ backendStatus == HttpStatus.BAD_GATEWAY
+ backendStatus == HttpStatus.GATEWAY_TIMEOUT) {
             return backendStatus;
         }
 
@@ -253,9 +264,9 @@ public class AuthGatewayService implements AuthUseCase {
     private boolean looksLikeConflict(String message) {
         String normalized = String.valueOf(message).toLowerCase();
         return normalized.contains("ya se encuentra registrado")
-                || normalized.contains("already exists")
-                || normalized.contains("duplic")
-                || normalized.contains("ya existe");
+ normalized.contains("already exists")
+ normalized.contains("duplic")
+ normalized.contains("ya existe");
     }
 
     @Override
@@ -263,7 +274,7 @@ public class AuthGatewayService implements AuthUseCase {
         log.debug("Getting user info for userId: {}", userId);
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/me?user_id=" + userId, HttpMethod.GET, Map.of(), null
+                "/api/auth/me?user_id=" + userId, HttpMethod.@@GET, Map.of(), null
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
@@ -340,3 +351,10 @@ public class AuthGatewayService implements AuthUseCase {
                 .build();
     }
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/HttpMethod#GET#

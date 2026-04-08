@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GatewayValidationException.class)
     public ResponseEntity<GatewayResponse<Void>> handleGatewayValidation(
             GatewayValidationException ex) {
-        return ResponseEntity.badRequest()
+        return ResponseEntity.status(ex.getStatus())
                 .body(GatewayResponse.error(ex.getMessage(), TraceIdHolder.get()));
     }
 
