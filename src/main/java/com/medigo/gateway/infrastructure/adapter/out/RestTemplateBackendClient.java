@@ -9,7 +9,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Map;
 
@@ -24,6 +27,7 @@ public class RestTemplateBackendClient implements BackendClient {
 
     private final RestTemplate restTemplate;
     private final GatewayProperties properties;
+    private final ObjectMapper objectMapper;
 
     @Override
     @CircuitBreaker(name = "backendCB", fallbackMethod = "fallback")
@@ -35,7 +39,13 @@ public class RestTemplateBackendClient implements BackendClient {
         HttpEntity<Object> entity = new HttpEntity<>(body, httpHeaders);
 
         log.debug("Backend call: {} {}", method, url);
-        return restTemplate.exchange(url, method, entity, Object.class);
+        try {
+            return restTemplate.exchange(url, method, entity, Object.class);
+        } catch (HttpStatusCodeException ex) {
+            Object responseBody = parseBackendErrorBody(ex);
+            log.warn("Backend responded with status {} for {} {}", ex.getStatusCode(), method, path);
+            return ResponseEntity.status(ex.getStatusCode()).body(responseBody);
+        }
     }
 
     /**
@@ -53,5 +63,18 @@ public class RestTemplateBackendClient implements BackendClient {
         h.setContentType(MediaType.APPLICATION_JSON);
         extraHeaders.forEach(h::set);
         return h;
+    }
+
+    private Object parseBackendErrorBody(HttpStatusCodeException ex) {
+        String rawBody = ex.getResponseBodyAsString();
+        if (rawBody == null || rawBody.isBlank()) {
+            return Map.of("message", ex.getStatusText());
+        }
+
+        try {
+            return objectMapper.readValue(rawBody, Object.class);
+        } catch (Exception ignored) {
+            return Map.of("message", ex.getStatusText(), "details", rawBody);
+        }
     }
 }
