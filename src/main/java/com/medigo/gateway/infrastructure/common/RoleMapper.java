@@ -28,6 +28,9 @@ public class RoleMapper {
         }
 
         String normalized = backendRole.trim().toUpperCase();
+        if (normalized.startsWith("ROLE_")) {
+            normalized = normalized.substring("ROLE_".length());
+        }
 
         return switch (normalized) {
             case "USUARIO" -> "AFFILIATE";
