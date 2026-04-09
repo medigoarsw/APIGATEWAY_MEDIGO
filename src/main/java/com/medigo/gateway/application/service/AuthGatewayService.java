@@ -44,19 +44,29 @@ public class AuthGatewayService implements AuthUseCase {
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
-                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN) {
-            throw new GatewayValidationException("Credenciales inválidas");
+                || backendResponse.getStatusCode() == HttpStatus.FORBIDDEN
+                || backendResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
+            throw new GatewayValidationException("Correo o contraseña incorrectos.", HttpStatus.UNAUTHORIZED);
+        }
+        if (backendResponse.getStatusCode() == HttpStatus.BAD_REQUEST) {
+            throw new GatewayValidationException("Verifica el correo y la contraseña e intenta nuevamente.", HttpStatus.BAD_REQUEST);
         }
         if (backendResponse.getStatusCode().isError()) {
             log.error("Backend respondió con error {}: {}", backendResponse.getStatusCode(), backendResponse.getBody());
-            throw new IllegalStateException("Error en el backend al autenticar: " + backendResponse.getStatusCode());
+            throw new GatewayValidationException(
+                    "No fue posible iniciar sesión en este momento. Intenta nuevamente.",
+                    HttpStatus.BAD_GATEWAY
+            );
         }
 
         @SuppressWarnings("unchecked")
         Map<String, Object> body = (Map<String, Object>) backendResponse.getBody();
 
         if (body == null) {
-            throw new IllegalStateException("Backend returned empty body on login");
+            throw new GatewayValidationException(
+                    "No fue posible iniciar sesión en este momento. Intenta nuevamente.",
+                    HttpStatus.BAD_GATEWAY
+            );
         }
 
         Map<String, Object> payload = resolvePayload(body);
@@ -66,17 +76,26 @@ public class AuthGatewayService implements AuthUseCase {
         String role = readAsString(payload, "role");
 
         if (userId == null || userId.isBlank()) {
-            throw new IllegalStateException("Backend login response missing user id");
+            throw new GatewayValidationException(
+                    "No fue posible iniciar sesión en este momento. Intenta nuevamente.",
+                    HttpStatus.BAD_GATEWAY
+            );
         }
         if (username == null || username.isBlank()) {
-            throw new IllegalStateException("Backend login response missing username");
+            throw new GatewayValidationException(
+                    "No fue posible iniciar sesión en este momento. Intenta nuevamente.",
+                    HttpStatus.BAD_GATEWAY
+            );
         }
 
         long id;
         try {
             id = Long.parseLong(userId);
         } catch (NumberFormatException ex) {
-            throw new IllegalStateException("Backend login response contains invalid user id: " + userId, ex);
+            throw new GatewayValidationException(
+                    "No fue posible iniciar sesión en este momento. Intenta nuevamente.",
+                    HttpStatus.BAD_GATEWAY
+            );
         }
 
         // Log para debugging de roles
@@ -219,16 +238,33 @@ public class AuthGatewayService implements AuthUseCase {
     }
 
     private String resolveRegisterErrorMessage(String backendMessage, HttpStatus backendStatus) {
-        if (backendMessage != null && !backendMessage.isBlank()) {
-            return backendMessage;
+        String normalized = String.valueOf(backendMessage).toLowerCase();
+
+        if (normalized.contains("contraseña") || normalized.contains("password") || normalized.contains("weak")) {
+            return "La contraseña no cumple los requisitos de seguridad.";
+        }
+        if (normalized.contains("email") && (normalized.contains("válido") || normalized.contains("valido") || normalized.contains("formato"))) {
+            return "El correo no tiene un formato válido.";
+        }
+        if (normalized.contains("phone") || normalized.contains("teléfono") || normalized.contains("telefono")) {
+            return "El teléfono no es válido. Usa el formato +57-322-5555555.";
+        }
+        if (normalized.contains("rol") || normalized.contains("role") || normalized.contains("affiliate") || normalized.contains("delivery")) {
+            return "El rol enviado no es válido. Solo se permiten AFFILIATE o DELIVERY.";
+        }
+        if (normalized.contains("ya se encuentra registrado")
+                || normalized.contains("already exists")
+                || normalized.contains("duplic")
+                || normalized.contains("ya existe")) {
+            return "No fue posible crear la cuenta con los datos ingresados.";
         }
 
         return switch (backendStatus) {
-            case CONFLICT -> "No se pudo crear la cuenta porque el usuario o email ya existe.";
+            case CONFLICT -> "No fue posible crear la cuenta con los datos ingresados.";
             case UNAUTHORIZED, FORBIDDEN -> "No autorizado para crear la cuenta con los datos enviados.";
             case BAD_REQUEST -> "Datos inválidos para crear la cuenta. Verifique email, contraseña, rol y teléfono.";
             case SERVICE_UNAVAILABLE, BAD_GATEWAY, GATEWAY_TIMEOUT -> "El backend no está disponible temporalmente. Intente de nuevo.";
-            default -> "Error del backend al crear la cuenta.";
+            default -> "No fue posible crear la cuenta en este momento. Intenta nuevamente.";
         };
     }
 
