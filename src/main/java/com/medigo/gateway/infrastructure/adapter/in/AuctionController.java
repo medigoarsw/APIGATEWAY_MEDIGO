@@ -65,7 +65,7 @@ public class AuctionController {
     @GetMapping("/won")
     @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
     @SecurityRequirement(name = "BearerAuth")
-    @Operation(summary = "Subastas ganadas del usuario autenticado (ADMIN + AFFILIATE)")
+    @Operation(summary = "Historial de subastas ganadas (ADMIN + AFFILIATE)")
     public ResponseEntity<Object> won(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,

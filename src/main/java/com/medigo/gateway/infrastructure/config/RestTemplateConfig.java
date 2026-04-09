@@ -25,6 +25,9 @@ public class RestTemplateConfig {
         int ms = properties.getBackend().getTimeoutSeconds() * 1000;
         factory.setConnectTimeout(ms);
         factory.setReadTimeout(ms);
+        // Evita fallos "cannot retry due to server authentication, in streaming mode"
+        // al reenviar POST/PUT cuando el backend responde 401/403.
+        factory.setOutputStreaming(false);
         RestTemplate restTemplate = new RestTemplate(factory);
         // No lanzar excepción en errores 4xx/5xx del backend; dejar que el servicio los maneje
         restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {
