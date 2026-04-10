@@ -2,6 +2,7 @@ package com.medigo.gateway.infrastructure.security;
 
 import com.medigo.gateway.domain.model.UserClaims;
 import com.medigo.gateway.domain.port.out.JwtPort;
+import com.medigo.gateway.infrastructure.common.RoleMapper;
 import com.medigo.gateway.infrastructure.common.TraceIdHolder;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -89,8 +90,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     log.warn("[{}] Token contiene role vacio, asignando AFFILIATE por defecto", traceId);
                     rawRole = "AFFILIATE";
                 }
-                
-                String grantedAuthority = "ROLE_" + rawRole;
+
+                String canonicalRole = RoleMapper.toCanonical(rawRole);
+                log.info("[{}] JWT Filter: rawRole={} -> canonicalRole={}", traceId, rawRole, canonicalRole);
+                String grantedAuthority = "ROLE_" + canonicalRole;
 
                 UsernamePasswordAuthenticationToken auth =
                         new UsernamePasswordAuthenticationToken(
@@ -98,8 +101,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                 List.of(new SimpleGrantedAuthority(grantedAuthority)));
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
-                log.debug("[{}] Usuario autenticado: username={} role={} authority={}", 
-                         traceId, claims.getUsername(), rawRole, grantedAuthority);
+                log.debug("[{}] Usuario autenticado: username={} rawRole={} canonicalRole={} authority={}",
+                         traceId, claims.getUsername(), rawRole, canonicalRole, grantedAuthority);
             } catch (Exception e) {
                 log.error("[{}] Error validando JWT: {}", traceId, e.getMessage(), e);
                 // No configurar autenticación, continuar como anonimo
