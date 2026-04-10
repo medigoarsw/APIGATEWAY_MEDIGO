@@ -6,6 +6,7 @@ import com.medigo.gateway.application.dto.response.GatewayResponse;
 import com.medigo.gateway.application.dto.response.LoginResponse;
 import com.medigo.gateway.application.dto.response.RegisterResponse;
 import com.medigo.gateway.application.dto.response.UserResponseDto;
+import com.medigo.gateway.domain.model.UserClaims;
 import com.medigo.gateway.domain.port.in.AuthUseCase;
 import com.medigo.gateway.infrastructure.common.TraceIdHolder;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -53,8 +55,24 @@ public class AuthController {
     @PreAuthorize("authenticated")
     @SecurityRequirement(name = "BearerAuth")
     @Operation(summary = "Obtener información del usuario actual (AUTHENTICATED)")
-    public ResponseEntity<GatewayResponse<UserResponseDto>> getMe(@RequestParam Long user_id) {
-        UserResponseDto response = authUseCase.getMe(user_id);
+    public ResponseEntity<GatewayResponse<UserResponseDto>> getMe(
+            @RequestParam(required = false) Long user_id) {
+        
+        Long finalUserId = user_id;
+        
+        // Si no viene user_id, intentar extraerlo del token (SecurityContext)
+        if (finalUserId == null) {
+            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (principal instanceof UserClaims claims) {
+                finalUserId = Long.valueOf(claims.getUserId());
+            }
+        }
+        
+        if (finalUserId == null) {
+            return ResponseEntity.badRequest().body(GatewayResponse.error("user_id es requerido o no pudo ser extraído del token", TraceIdHolder.get()));
+        }
+
+        UserResponseDto response = authUseCase.getMe(finalUserId);
         return ResponseEntity.ok(GatewayResponse.ok(response, TraceIdHolder.get()));
     }
 

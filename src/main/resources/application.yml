@@ -58,4 +58,4 @@ springdoc:
 logging:
   level:
     com.medigo.gateway: DEBUG
-    org.springframework.security: INFO
+    org.springframework.security: DEBUG

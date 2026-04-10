@@ -38,13 +38,20 @@ public class RestTemplateBackendClient implements BackendClient {
         HttpHeaders httpHeaders = buildHeaders(headers);
         HttpEntity<Object> entity = new HttpEntity<>(body, httpHeaders);
 
-        log.debug("Backend call: {} {}", method, url);
+        log.info("Gateway RestTemplateBackendClient: Calling backend -> {} {}", method, url);
         try {
-            return restTemplate.exchange(url, method, entity, Object.class);
+            ResponseEntity<Object> response = restTemplate.exchange(url, method, entity, Object.class);
+            log.info("Gateway RestTemplateBackendClient: Success from backend. Status: {}", response.getStatusCode());
+            return response;
         } catch (HttpStatusCodeException ex) {
             Object responseBody = parseBackendErrorBody(ex);
-            log.warn("Backend responded with status {} for {} {}", ex.getStatusCode(), method, path);
-            return ResponseEntity.status(ex.getStatusCode()).body(responseBody);
+            log.warn("Gateway RestTemplateBackendClient: Backend returned HTTP Error {}: {}", ex.getStatusCode(), ex.getResponseBodyAsString());
+            return ResponseEntity.status(ex.getStatusCode())
+                    .headers(ex.getResponseHeaders() != null ? ex.getResponseHeaders() : new HttpHeaders())
+                    .body(responseBody);
+        } catch (Exception e) {
+            log.error("Gateway RestTemplateBackendClient: UNEXPECTED error calling backend: {}", e.getMessage(), e);
+            throw e;
         }
     }
 

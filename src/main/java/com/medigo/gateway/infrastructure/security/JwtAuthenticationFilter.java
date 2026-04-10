@@ -33,6 +33,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtPort jwtPort;
 
     @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getRequestURI();
+        return path.startsWith("/ws");
+    }
+
+    @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain chain)
@@ -48,15 +54,28 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // Procesar JWT
         String token = extractToken(request);
+        log.info("[{}] JWT Filter: Extracted token beginning with: {}", traceId, 
+                 (token != null && token.length() > 10) ? token.substring(0, 10) : token);
+
         if (!StringUtils.hasText(token)) {
             log.warn("[{}] Request sin token: {} {}", traceId, request.getMethod(), request.getRequestURI());
-        } else if (!jwtPort.isValid(token)) {
-            log.warn("[{}] Token inválido en: {} {}", traceId, request.getMethod(), request.getRequestURI());
         }
         
-        if (StringUtils.hasText(token) && jwtPort.isValid(token)) {
+        // Soporte para tokens de desarrollo (fake-jwt)
+        boolean isFake = StringUtils.hasText(token) && token.startsWith("fake-jwt");
+        log.info("[{}] JWT Filter: isFake={}, isValid={}", traceId, isFake, 
+                 StringUtils.hasText(token) ? jwtPort.isValid(token) : "false");
+        
+        if (StringUtils.hasText(token) && (isFake || jwtPort.isValid(token))) {
             try {
-                UserClaims claims = jwtPort.validateAndExtract(token);
+                UserClaims claims;
+                if (isFake) {
+                    claims = extractFakeClaims(token);
+                    log.info("[{}] JWT Filter: Extracted Fake Claims: role={}", traceId, claims.getRole());
+                } else {
+                    claims = jwtPort.validateAndExtract(token);
+                    log.info("[{}] JWT Filter: Extracted Real Claims: role={}", traceId, claims.getRole());
+                }
                 
                 // Validar que claims no sea null
                 if (claims == null) {
@@ -97,10 +116,38 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private String extractToken(HttpServletRequest req) {
         // Primero del header
         String header = req.getHeader("Authorization");
+        String token = null;
+
         if (StringUtils.hasText(header) && header.startsWith(BEARER_PREFIX)) {
-            return header.substring(BEARER_PREFIX.length());
+            token = header.substring(BEARER_PREFIX.length()).trim();
+        } else {
+            // Segundo del query param (WebSocket)
+            token = req.getParameter("token");
         }
-        // Segundo del query param (WebSocket)
-        return req.getParameter("token");
+
+        // Seguridad extra: evitar strings "null" o "undefined" literales
+        if ("null".equalsIgnoreCase(token) || "undefined".equalsIgnoreCase(token)) {
+            return null;
+        }
+
+        return token;
+    }
+
+    private UserClaims extractFakeClaims(String token) {
+        String[] parts = token.split("\\.");
+        // format esperado: fake-jwt.userId.ROLE.timestamp
+        String role = (parts.length >= 3) ? parts[2].toUpperCase() : "AFFILIATE";
+        
+        // Traducciones comunes para facilitar desarrollo
+        if ("AFILIADO".equals(role)) role = "AFFILIATE";
+        if ("REPARTIDOR".equals(role)) role = "DELIVERY";
+        if ("USER".equals(role)) role = "USUARIO";
+
+        return UserClaims.builder()
+                .userId(parts.length > 1 ? parts[1] : "0")
+                .username("DevUser")
+                .email("dev@medigo.co")
+                .role(role)
+                .build();
     }
 }

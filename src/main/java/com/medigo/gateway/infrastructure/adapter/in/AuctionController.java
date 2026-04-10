@@ -29,7 +29,6 @@ public class AuctionController {
     private final ForwardingUseCase forwardingUseCase;
     private final ValidationService validationService;
 
-    // ========== ADMIN ONLY ==========
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
@@ -52,7 +51,6 @@ public class AuctionController {
         return forwardingUseCase.forward("/api/auctions/" + id, req, body);
     }
 
-    // ========== ADMIN + AFFILIATE ==========
 
     @GetMapping("/active")
     @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
@@ -65,7 +63,7 @@ public class AuctionController {
     @GetMapping("/won")
     @PreAuthorize("hasAnyRole('ADMIN', 'AFFILIATE')")
     @SecurityRequirement(name = "BearerAuth")
-    @Operation(summary = "Historial de subastas ganadas (ADMIN + AFFILIATE)")
+    @Operation(summary = "Subastas ganadas del usuario autenticado (ADMIN + AFFILIATE)")
     public ResponseEntity<Object> won(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size,
