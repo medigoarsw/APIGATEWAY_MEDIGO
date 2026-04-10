@@ -111,9 +111,11 @@ public class LogisticsController {
     @PreAuthorize("hasRole('AFFILIATE')")
     @SecurityRequirement(name = "BearerAuth")
     @Operation(summary = "Obtener dashboard logístico (AFFILIATE ONLY)")
-    public ResponseEntity<Object> getAffiliateDashboard(HttpServletRequest req) {
-        org.slf4j.LoggerFactory.getLogger(LogisticsController.class).info("Gateway LogisticsController: Received /affiliate/dashboard request. Forwarding to backend...");
-        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard", req, null);
+    public ResponseEntity<Object> getAffiliateDashboard(
+            @RequestParam Long affiliateId, 
+            HttpServletRequest req) {
+        org.slf4j.LoggerFactory.getLogger(LogisticsController.class).info("Gateway LogisticsController: Received /affiliate/dashboard request for affiliateId={}. Forwarding to backend...", affiliateId);
+        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard?affiliateId=" + affiliateId, req, null);
     }
 
     // ========== LEGACY (No en especificación) ==========
@@ -130,7 +132,7 @@ public class LogisticsController {
 
     @GetMapping("/test-backend")
     @Operation(summary = "Punto de prueba sin seguridad (PUBLIC)")
-    public ResponseEntity<Object> testBackend(HttpServletRequest req) {
-        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard", req, null);
+    public ResponseEntity<Object> testBackend(@RequestParam Long affiliateId, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard?affiliateId=" + affiliateId, req, null);
     }
 }
