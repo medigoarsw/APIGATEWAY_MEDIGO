@@ -27,18 +27,22 @@ public class ForwardingService implements ForwardingUseCase {
     @Override
     public ResponseEntity<Object> forward(String path, HttpServletRequest request, Object body) {
         String traceId = TraceIdHolder.get();
-        log.info("[{}] Forwarding {} {}", traceId, request.getMethod(), path);
+        log.info("[{}] Gateway ForwardingService: Forwarding {} to {}", traceId, request.getMethod(), path);
 
-        Map<String, String> headers = new HashMap<>();
-        headers.put("X-Trace-ID", traceId);
+        try {
+            Map<String, String> headers = new HashMap<>();
+            headers.put("X-Trace-ID", traceId);
 
-        // Propagar JWT al backend si existe
-        String authHeader = request.getHeader("Authorization");
-        if (authHeader != null) {
-            headers.put("Authorization", authHeader);
+            String authHeader = request.getHeader("Authorization");
+            if (authHeader != null) {
+                headers.put("Authorization", authHeader);
+            }
+
+            HttpMethod method = HttpMethod.valueOf(request.getMethod());
+            return backendClient.send(path, method, headers, body);
+        } catch (Exception e) {
+            log.error("[{}] Gateway ForwardingService: Error during forwarding: {}", traceId, e.getMessage(), e);
+            throw e;
         }
-
-        HttpMethod method = HttpMethod.valueOf(request.getMethod());
-        return backendClient.send(path, method, headers, body);
     }
 }

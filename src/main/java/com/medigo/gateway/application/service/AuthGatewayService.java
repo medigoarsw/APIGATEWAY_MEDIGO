@@ -11,12 +11,16 @@ import com.medigo.gateway.domain.port.out.BackendClient;
 import com.medigo.gateway.domain.port.out.JwtPort;
 import com.medigo.gateway.infrastructure.common.RoleMapper;
 import com.medigo.gateway.infrastructure.exception.GatewayValidationException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -40,7 +44,7 @@ public class AuthGatewayService implements AuthUseCase {
         log.debug("Forwarding login request for user: {}", request.getEmail());
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/login", HttpMethod.POST, Map.of(), request
+                "/api/auth/login", HttpMethod.POST, getPropagatedHeaders(), request
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.UNAUTHORIZED
@@ -162,7 +166,7 @@ public class AuthGatewayService implements AuthUseCase {
         log.debug("Forwarding register request for user: {}", request.getEmail());
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/register", HttpMethod.POST, Map.of(), request
+                "/api/auth/register", HttpMethod.POST, getPropagatedHeaders(), request
         );
 
         if (backendResponse.getStatusCode().isError()) {
@@ -296,20 +300,34 @@ public class AuthGatewayService implements AuthUseCase {
 
     @Override
     public UserResponseDto getMe(Long userId) {
-        log.debug("Getting user info for userId: {}", userId);
+        log.info("Gateway: Fetching profile for userId: {} from backend", userId);
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/me?user_id=" + userId, HttpMethod.GET, Map.of(), null
+                "/api/auth/me?user_id=" + userId, HttpMethod.GET, getPropagatedHeaders(), null
         );
+
+        log.info("Gateway: Backend responded with status: {}", backendResponse.getStatusCode());
+        if (backendResponse.getBody() != null) {
+            log.info("Gateway: Backend body type: {}", backendResponse.getBody().getClass().getName());
+            log.info("Gateway: Backend body content: {}", backendResponse.getBody());
+        } else {
+            log.warn("Gateway: Backend body is NULL");
+        }
 
         if (backendResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
             throw new GatewayValidationException("Usuario no encontrado");
         }
         if (backendResponse.getStatusCode().isError()) {
-            throw new IllegalStateException("Error en el backend al obtener usuario");
+            log.error("Gateway: Backend returned error status {} for userId {}", backendResponse.getStatusCode(), userId);
+            throw new IllegalStateException("Error en el backend al obtener usuario. Status: " + backendResponse.getStatusCode());
         }
 
-        return mapToUserResponseDto(backendResponse.getBody());
+        try {
+            return mapToUserResponseDto(backendResponse.getBody());
+        } catch (Exception e) {
+            log.error("Gateway: Error mapping backend response to DTO: {}", e.getMessage(), e);
+            throw new IllegalStateException("Error al procesar la respuesta del backend: " + e.getMessage());
+        }
     }
 
     @Override
@@ -317,7 +335,7 @@ public class AuthGatewayService implements AuthUseCase {
         log.debug("Getting user by id: {}", id);
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/" + id, HttpMethod.GET, Map.of(), null
+                "/api/auth/" + id, HttpMethod.GET, getPropagatedHeaders(), null
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
@@ -335,7 +353,7 @@ public class AuthGatewayService implements AuthUseCase {
         log.debug("Getting user by email: {}", email);
 
         ResponseEntity<Object> backendResponse = backendClient.send(
-                "/api/auth/email/" + email, HttpMethod.GET, Map.of(), null
+                "/api/auth/email/" + email, HttpMethod.GET, getPropagatedHeaders(), null
         );
 
         if (backendResponse.getStatusCode() == HttpStatus.NOT_FOUND) {
@@ -374,5 +392,30 @@ public class AuthGatewayService implements AuthUseCase {
                 .role(role)
                 .active(active)
                 .build();
+    }
+
+    /**
+     * Extrae headers del request actual para propagarlos (Trace ID, Authorization, etc).
+     */
+    private Map<String, String> getPropagatedHeaders() {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes == null) return Map.of();
+
+        HttpServletRequest request = attributes.getRequest();
+        Map<String, String> headers = new HashMap<>();
+
+        // Propagar Authorization
+        String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
+        if (authHeader != null) {
+            headers.put(HttpHeaders.AUTHORIZATION, authHeader);
+        }
+
+        // Propagar Trace ID si existe
+        String traceId = request.getHeader("X-Trace-ID");
+        if (traceId != null) {
+            headers.put("X-Trace-ID", traceId);
+        }
+
+        return headers;
     }
 }

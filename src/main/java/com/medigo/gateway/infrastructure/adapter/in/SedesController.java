@@ -3,6 +3,7 @@ package com.medigo.gateway.infrastructure.adapter.in;
 import com.medigo.gateway.domain.port.in.ForwardingUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -129,7 +130,14 @@ public class SedesController {
     }
 
     @Data
-    static class BaseSedeRequest {
+    @Schema(name = "CreateSedeRequest")
+    static class CreateSedeRequest {
+        @NotBlank(message = "nombre es requerido")
+        private String nombre;
+        @NotBlank(message = "direccion es requerida")
+        private String direccion;
+        @NotBlank(message = "especialidad es requerida")
+        private String especialidad;
         private String telefono;
         @PositiveOrZero(message = "capacidad debe ser mayor o igual a 0")
         private Integer capacidad;
@@ -144,21 +152,33 @@ public class SedesController {
     }
 
     @Data
-    @Schema(name = "CreateSedeRequest")
-    static class CreateSedeRequest extends BaseSedeRequest {
-        @NotBlank(message = "nombre es requerido")
+    @Schema(name = "UpdateSedeRequest")
+    static class UpdateSedeRequest {
         private String nombre;
-        @NotBlank(message = "direccion es requerida")
         private String direccion;
-        @NotBlank(message = "especialidad es requerida")
         private String especialidad;
+        private String telefono;
+        @PositiveOrZero(message = "capacidad debe ser mayor o igual a 0")
+        private Integer capacidad;
+
+        @DecimalMin(value = "-90.0", message = "latitude fuera de rango")
+        @DecimalMax(value = "90.0", message = "latitude fuera de rango")
+        private Double latitude;
+
+        @DecimalMin(value = "-180.0", message = "longitude fuera de rango")
+        @DecimalMax(value = "180.0", message = "longitude fuera de rango")
+        private Double longitude;
     }
 
     @Data
-    @Schema(name = "UpdateSedeRequest")
-    static class UpdateSedeRequest extends BaseSedeRequest {
-        private String nombre;
-        private String direccion;
-        private String especialidad;
+    @Schema(name = "GatewayStandardResponse")
+    static class GatewayStandardResponse {
+        private boolean success;
+        private String message;
+        @Schema(description = "Objeto de respuesta o null")
+        private Object data;
+        private String traceId;
+        private String apiVersion;
+        private String timestamp;
     }
 }

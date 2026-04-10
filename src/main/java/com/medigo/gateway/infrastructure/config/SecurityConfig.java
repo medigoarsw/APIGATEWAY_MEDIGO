@@ -61,6 +61,8 @@ public class SecurityConfig {
                 // Swagger, actuator, health
                 .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/swagger-ui.js").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers("/api/logistics/test-backend").permitAll()
+                .requestMatchers("/ws", "/ws/**").permitAll()
 
                 // Alias legacy deshabilitado explícitamente
                 .requestMatchers("/sedes", "/sedes/**").denyAll()
@@ -87,6 +89,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/orders/cart").hasRole("AFFILIATE")
                 .requestMatchers(HttpMethod.POST, "/api/orders").hasRole("AFFILIATE")
                 .requestMatchers(HttpMethod.POST, "/api/orders/*/confirm").hasRole("AFFILIATE")
+                .requestMatchers(HttpMethod.GET, "/api/logistics/affiliate/dashboard").hasRole("AFFILIATE")
 
                 // ======== ADMIN O AFFILIATE ========
                 .requestMatchers(HttpMethod.GET, "/api/auctions/won").hasAnyRole("ADMIN", "AFFILIATE")
@@ -98,10 +101,12 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/auctions/{id}/bids").hasAnyRole("ADMIN", "AFFILIATE")
 
                 // ======== DELIVERY ONLY ========
-                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/location").hasRole("DELIVERY")
-                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/complete").hasRole("DELIVERY")
-                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/active").hasRole("DELIVERY")
-                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/{id}").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.POST, "/api/logistics/deliveries/accept").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/*/pickup").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/location").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/complete").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
+                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/active").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
+                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/{id}").hasAnyRole("DELIVERY", "REPARTIDOR", "DELIVERY_PERSON")
 
                 // Cualquier otra ruta: requiere autenticación
                 .anyRequest().authenticated()
@@ -121,20 +126,14 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         
-        // Credenciales: false porque usamos JWT en headers, no cookies
-        config.setAllowCredentials(false);
+        // Credenciales: true para soportar Authorize headers con CORS
+        config.setAllowCredentials(true);
         
-        // Orígenes permitidos
-        config.setAllowedOrigins(Arrays.asList(
-            // Desarrollo local
-            "http://localhost:5173",      // Vite default
-            "http://localhost:3000",       // Next.js, CRA default
-            "http://localhost:4200",       // Angular default
-            "http://localhost:8080",       // General dev
-            
-            // Producción - Vercel (soporta preview deployments con *.vercel.app)
-            "https://frontmedigo.vercel.app",  // Dominio principal de Vercel
-            "https://frontmedigo-4r1srb9qh-anderson-fabian-garcia-nietos-projects.vercel.app"  // URL actual
+        // Orígenes permitidos (usar patrones para mayor flexibilidad en desarrollo)
+        config.setAllowedOriginPatterns(Arrays.asList(
+            "http://localhost:[*]",
+            "https://*.vercel.app",
+            "http://127.0.0.1:[*]"
         ));
         
         // NOTA: Si necesitas soportar TODOS los *.vercel.app dinámicamente, considera usar:

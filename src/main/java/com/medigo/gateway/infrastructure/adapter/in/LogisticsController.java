@@ -37,6 +37,32 @@ public class LogisticsController {
         return forwardingUseCase.forward("/api/logistics/deliveries/" + id + "/location", req, body);
     }
 
+    @PostMapping("/deliveries/accept")
+    @PreAuthorize("hasRole('DELIVERY')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Aceptar un pedido disponible (DELIVERY ONLY)")
+    public ResponseEntity<Object> acceptDelivery(
+            @RequestParam Long orderId, 
+            @RequestParam(required = false) Long driverId, 
+            HttpServletRequest req) {
+        
+        // Si no viene driverId en el query, lo pasamos como null y el backend debería extraerlo del token
+        String targetPath = "/api/logistics/deliveries/accept?orderId=" + orderId;
+        if (driverId != null) {
+            targetPath += "&driverId=" + driverId;
+        }
+        
+        return forwardingUseCase.forward(targetPath, req, null);
+    }
+
+    @PutMapping("/deliveries/{id}/pickup")
+    @PreAuthorize("hasRole('DELIVERY')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Marcar pedido como recogido (DELIVERY ONLY)")
+    public ResponseEntity<Object> pickupDelivery(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/deliveries/" + id + "/pickup", req, null);
+    }
+
     @PutMapping("/deliveries/{id}/complete")
     @PreAuthorize("hasRole('DELIVERY')")
     @SecurityRequirement(name = "BearerAuth")
@@ -79,6 +105,17 @@ public class LogisticsController {
         return forwardingUseCase.forward("/api/logistics/deliveries/assign", req, body);
     }
 
+    // ========== AFFILIATE ==========
+
+    @GetMapping("/affiliate/dashboard")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Obtener dashboard logístico (AFFILIATE ONLY)")
+    public ResponseEntity<Object> getAffiliateDashboard(HttpServletRequest req) {
+        org.slf4j.LoggerFactory.getLogger(LogisticsController.class).info("Gateway LogisticsController: Received /affiliate/dashboard request. Forwarding to backend...");
+        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard", req, null);
+    }
+
     // ========== LEGACY (No en especificación) ==========
 
     @GetMapping("/deliveries/{id}/location")
@@ -87,5 +124,13 @@ public class LogisticsController {
     @Operation(summary = "[DEPRECADO] Ubicación de entrega - usar PUT /location")
     public ResponseEntity<Object> location(@PathVariable Long id, HttpServletRequest req) {
         return forwardingUseCase.forward("/api/logistics/deliveries/" + id + "/location", req, null);
+    }
+
+    // ========== TEST ==========
+
+    @GetMapping("/test-backend")
+    @Operation(summary = "Punto de prueba sin seguridad (PUBLIC)")
+    public ResponseEntity<Object> testBackend(HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/affiliate/dashboard", req, null);
     }
 }
