@@ -1,5 +1,7 @@
 package com.medigo.gateway.application.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -23,9 +25,21 @@ public class CreateAuctionRequest {
     private BigDecimal basePrice;
 
     @NotNull
+        @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+        @Schema(
+            description = "Fecha/hora local de inicio (sin zona, no usar sufijo Z)",
+            type = "string",
+            example = "2026-04-09T15:23:00"
+        )
     private LocalDateTime startTime;
 
     @NotNull
+        @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+        @Schema(
+            description = "Fecha/hora local de fin (sin zona, no usar sufijo Z)",
+            type = "string",
+            example = "2026-04-09T15:33:00"
+        )
     private LocalDateTime endTime;
 
     // FIXED_TIME o INACTIVITY
