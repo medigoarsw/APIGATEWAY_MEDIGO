@@ -31,10 +31,12 @@ public class RateLimitInterceptor implements HandlerInterceptor {
                              Object handler) {
 
         String ip = req.getRemoteAddr();
+        log.info("Rate limiting check for IP: {}", ip);
 
         // Rate limit global por IP
         if (!rateLimitPort.isAllowed("ip:" + ip,
                 properties.getRateLimit().getGlobalPerMinute())) {
+            log.warn("Rate limit exceeded for IP: {}", ip);
             throw new RateLimitExceededException("Límite de peticiones por IP excedido");
         }
 
@@ -45,7 +47,10 @@ public class RateLimitInterceptor implements HandlerInterceptor {
                     ? properties.getRateLimit().getBidPerMinute()
                     : properties.getRateLimit().getUserPerMinute();
 
+            log.info("Rate limiting check for user: {} with limit: {}", claims.getUserId(), limit);
+
             if (!rateLimitPort.isAllowed("user:" + claims.getUserId(), limit)) {
+                log.warn("Rate limit exceeded for user: {}", claims.getUserId());
                 throw new RateLimitExceededException("Límite de peticiones por usuario excedido");
             }
         }

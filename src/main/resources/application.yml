@@ -13,7 +13,7 @@ spring:
 gateway:
   backend:
     base-url: ${BACKEND_URL:http://localhost:8080}
-    timeout-seconds: 30
+    timeout-seconds: 10
   jwt:
     secret: ${JWT_SECRET:medigo-super-secret-key-must-be-at-least-256-bits-long}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000}
@@ -44,8 +44,8 @@ resilience4j:
   retry:
     instances:
       backendRetry:
-        maxAttempts: 3
-        waitDuration: 500ms
+        maxAttempts: 1
+        waitDuration: 0ms
         retryExceptions:
           - org.springframework.web.client.ResourceAccessException
 

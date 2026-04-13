@@ -39,6 +39,14 @@ public class ForwardingService implements ForwardingUseCase {
         }
 
         HttpMethod method = HttpMethod.valueOf(request.getMethod());
-        return backendClient.send(path, method, headers, body);
+
+        try {
+            ResponseEntity<Object> response = backendClient.send(path, method, headers, body);
+            log.info("[{}] Backend response: status={}", traceId, response.getStatusCode());
+            return response;
+        } catch (Exception e) {
+            log.error("[{}] Error forwarding request to backend: {}", traceId, e.getMessage(), e);
+            throw e;
+        }
     }
 }
