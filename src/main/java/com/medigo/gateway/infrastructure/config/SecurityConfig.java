@@ -17,6 +17,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Configuración de Spring Security: stateless JWT + RBAC + CORS.
  * 
@@ -30,6 +33,8 @@ import java.util.Arrays;
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
+
+    private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
     private final JwtAuthenticationFilter jwtFilter;
 
