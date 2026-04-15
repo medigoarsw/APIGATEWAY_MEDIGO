@@ -63,9 +63,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/medications").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/medications/*").permitAll()
                 
-                // Swagger, actuator, health
+                // Swagger, actuator, health, error
                 .requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/swagger-ui.js").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers("/error").permitAll()
 
                 // Alias legacy deshabilitado explícitamente
                 .requestMatchers("/sedes", "/sedes/**").denyAll()
@@ -92,8 +93,11 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/api/orders/cart").hasRole("AFFILIATE")
                 .requestMatchers(HttpMethod.POST, "/api/orders").hasRole("AFFILIATE")
                 .requestMatchers(HttpMethod.POST, "/api/orders/*/confirm").hasRole("AFFILIATE")
+                .requestMatchers(HttpMethod.POST, "/api/logistics/orders").hasRole("AFFILIATE")
+                .requestMatchers(HttpMethod.POST, "/api/logistics/assignments").hasRole("AFFILIATE")
 
                 // ======== ADMIN O AFFILIATE ========
+                .requestMatchers("/api/logistics/dashboard/**").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers(HttpMethod.GET, "/api/auctions/won").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers(HttpMethod.GET, "/api/auctions/{id}").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers(HttpMethod.GET, "/api/auctions/active").hasAnyRole("ADMIN", "AFFILIATE")
@@ -107,6 +111,12 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/complete").hasRole("DELIVERY")
                 .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/active").hasRole("DELIVERY")
                 .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/{id}").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.GET, "/api/driver/history/**").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.POST, "/api/driver/support/**").hasRole("DELIVERY")
+
+                // ======== GENERIC API (FALLBACK) ========
+                // Esta línea permitirá que el Catch-All Controller reciba las peticiones.
+                .requestMatchers("/api/**").authenticated()
 
                 // Cualquier otra ruta: requiere autenticación
                 .anyRequest().authenticated()

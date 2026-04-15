@@ -79,6 +79,32 @@ public class LogisticsController {
         return forwardingUseCase.forward("/api/logistics/deliveries/assign", req, body);
     }
 
+    // ========== AFFILIATE / GENERIC LOGISTICS ==========
+
+    @GetMapping("/dashboard")
+    @PreAuthorize("hasAnyRole('AFFILIATE', 'ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Dashboard de logística (AFFILIATE/ADMIN)")
+    public ResponseEntity<Object> getDashboard(HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/dashboard", req, null);
+    }
+
+    @PostMapping("/orders")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Crear orden de logística (AFFILIATE ONLY)")
+    public ResponseEntity<Object> createLogisticsOrder(@RequestBody Object body, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/orders", req, body);
+    }
+
+    @PostMapping("/assignments")
+    @PreAuthorize("hasRole('AFFILIATE')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Asignar courier (AFFILIATE ONLY)")
+    public ResponseEntity<Object> assignCourier(@RequestBody Object body, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/assignments", req, body);
+    }
+
     // ========== LEGACY (No en especificación) ==========
 
     @GetMapping("/deliveries/{id}/location")

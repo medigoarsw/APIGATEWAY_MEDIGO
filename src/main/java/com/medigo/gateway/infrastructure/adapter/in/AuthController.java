@@ -6,6 +6,7 @@ import com.medigo.gateway.application.dto.response.GatewayResponse;
 import com.medigo.gateway.application.dto.response.LoginResponse;
 import com.medigo.gateway.application.dto.response.RegisterResponse;
 import com.medigo.gateway.application.dto.response.UserResponseDto;
+import com.medigo.gateway.domain.model.UserClaims;
 import com.medigo.gateway.domain.port.in.AuthUseCase;
 import com.medigo.gateway.infrastructure.common.TraceIdHolder;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -50,11 +52,13 @@ public class AuthController {
     }
 
     @GetMapping("/me")
-    @PreAuthorize("authenticated")
+    @PreAuthorize("isAuthenticated()")
     @SecurityRequirement(name = "BearerAuth")
     @Operation(summary = "Obtener información del usuario actual (AUTHENTICATED)")
-    public ResponseEntity<GatewayResponse<UserResponseDto>> getMe(@RequestParam Long user_id) {
-        UserResponseDto response = authUseCase.getMe(user_id);
+    public ResponseEntity<GatewayResponse<UserResponseDto>> getMe(Authentication authentication) {
+        UserClaims claims = (UserClaims) authentication.getPrincipal();
+        Long userId = Long.parseLong(claims.getUserId());
+        UserResponseDto response = authUseCase.getMe(userId);
         return ResponseEntity.ok(GatewayResponse.ok(response, TraceIdHolder.get()));
     }
 
