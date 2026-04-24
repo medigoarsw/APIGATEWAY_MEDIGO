@@ -97,6 +97,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/logistics/assignments").hasRole("AFFILIATE")
 
                 // ======== ADMIN O AFFILIATE ========
+                .requestMatchers(HttpMethod.GET, "/api/logistics/dashboard").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers("/api/logistics/dashboard/**").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers(HttpMethod.GET, "/api/auctions/won").hasAnyRole("ADMIN", "AFFILIATE")
                 .requestMatchers(HttpMethod.GET, "/api/auctions/{id}").hasAnyRole("ADMIN", "AFFILIATE")
