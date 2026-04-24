@@ -73,6 +73,18 @@ public class OrderController {
                 req, body);
     }
 
+    // ========== DELIVERY ==========
+
+    @GetMapping
+    @PreAuthorize("hasAnyRole('DELIVERY', 'ADMIN')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Listar pedidos por estado (DELIVERY/ADMIN) — e.g. ?status=CONFIRMED")
+    public ResponseEntity<Object> getByStatus(
+            @RequestParam(required = false) String status, HttpServletRequest req) {
+        String path = status != null ? "/api/orders?status=" + status : "/api/orders";
+        return forwardingUseCase.forward(path, req, null);
+    }
+
     // ========== LEGACY (No en especificación, mantener pero deprecar) ==========
 
     @GetMapping("/{id}")

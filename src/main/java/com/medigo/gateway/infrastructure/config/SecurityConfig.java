@@ -81,7 +81,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/api/medications/*/branch/*/stock").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/api/auctions").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/api/auctions/{id}").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.POST, "/api/logistics/deliveries/assign").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/api/logistics/deliveries/assign").hasAnyRole("ADMIN", "DELIVERY")
                 .requestMatchers(HttpMethod.GET, "/api/sedes").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/api/sedes/*").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST, "/api/sedes").hasRole("ADMIN")
@@ -107,12 +107,17 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/auctions/{id}/bids").hasAnyRole("ADMIN", "AFFILIATE")
 
                 // ======== DELIVERY ONLY ========
-                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/location").hasRole("DELIVERY")
-                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/{id}/complete").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/*/location").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/*/complete").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.PUT, "/api/logistics/deliveries/*/pickup").hasRole("DELIVERY")
                 .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/active").hasRole("DELIVERY")
-                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/{id}").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.GET, "/api/logistics/deliveries/*").hasRole("DELIVERY")
                 .requestMatchers(HttpMethod.GET, "/api/driver/history/**").hasRole("DELIVERY")
                 .requestMatchers(HttpMethod.POST, "/api/driver/support/**").hasRole("DELIVERY")
+                .requestMatchers(HttpMethod.GET, "/api/orders").hasAnyRole("DELIVERY", "ADMIN")
+
+                // ======== AFFILIATE + DELIVERY + ADMIN ========
+                .requestMatchers(HttpMethod.GET, "/api/logistics/orders/*/status").hasAnyRole("AFFILIATE", "DELIVERY", "ADMIN")
 
                 // ======== GENERIC API (FALLBACK) ========
                 // Esta línea permitirá que el Catch-All Controller reciba las peticiones.
@@ -146,7 +151,10 @@ public class SecurityConfig {
             "http://localhost:3000",       // Next.js, CRA default
             "http://localhost:4200",       // Angular default
             "http://localhost:8080",       // General dev
-            
+
+            // Red local (LAN) — pruebas desde otro dispositivo en el mismo WiFi
+            "http://192.168.1.104:5173",  // Frontend desde IP local
+
             // Producción - Vercel (soporta preview deployments con *.vercel.app)
             "https://frontmedigo.vercel.app",  // Dominio principal de Vercel
             "https://frontmedigo-4r1srb9qh-anderson-fabian-garcia-nietos-projects.vercel.app"  // URL actual

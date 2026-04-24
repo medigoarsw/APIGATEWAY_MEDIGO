@@ -69,17 +69,33 @@ public class LogisticsController {
                 req, null);
     }
 
-    // ========== ADMIN ==========
+    @PutMapping("/deliveries/{id}/pickup")
+    @PreAuthorize("hasRole('DELIVERY')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Confirmar recogida en sucursal — IN_ROUTE (DELIVERY ONLY)")
+    public ResponseEntity<Object> markPickup(@PathVariable Long id, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/deliveries/" + id + "/pickup", req, null);
+    }
+
+    // ========== DELIVERY + ADMIN ==========
 
     @PostMapping("/deliveries/assign")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('DELIVERY', 'ADMIN')")
     @SecurityRequirement(name = "BearerAuth")
-    @Operation(summary = "Asignar entrega a repartidor (ADMIN ONLY)")
+    @Operation(summary = "Auto-asignar repartidor a un pedido (DELIVERY / ADMIN)")
     public ResponseEntity<Object> assignDelivery(@Valid @RequestBody AssignDeliveryRequest body, HttpServletRequest req) {
         return forwardingUseCase.forward("/api/logistics/deliveries/assign", req, body);
     }
 
     // ========== AFFILIATE / GENERIC LOGISTICS ==========
+
+    @GetMapping("/orders/{orderId}/status")
+    @PreAuthorize("hasAnyRole('AFFILIATE', 'ADMIN', 'DELIVERY')")
+    @SecurityRequirement(name = "BearerAuth")
+    @Operation(summary = "Estado del pedido para seguimiento (AFFILIATE / DELIVERY / ADMIN)")
+    public ResponseEntity<Object> getOrderStatus(@PathVariable Long orderId, HttpServletRequest req) {
+        return forwardingUseCase.forward("/api/logistics/orders/" + orderId + "/status", req, null);
+    }
 
     @GetMapping("/dashboard")
     @PreAuthorize("hasAnyRole('AFFILIATE', 'ADMIN')")
